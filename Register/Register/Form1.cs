@@ -29,7 +29,18 @@ namespace Register
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string icNumber = textBox1.Text;
             string password = textBox2.Text;
@@ -40,7 +51,7 @@ namespace Register
                 return;
             }
 
-            string filePath = @"D:\Cky's Uni Folder\Enterprise Application Integration\assignment\GameLand\EAI-Assignment---GameLand\users.txt";
+            string filePath = @"D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\users.txt";
 
 
             string userData = icNumber + "," + password;
@@ -48,7 +59,7 @@ namespace Register
             try
             {
                 File.AppendAllText(filePath, userData + Environment.NewLine);
-                MessageBox.Show("Registered and saved to file!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registered as " + icNumber, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -57,11 +68,6 @@ namespace Register
             {
                 MessageBox.Show("Error saving data: " + ex.Message);
             }
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

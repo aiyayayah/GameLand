@@ -52,11 +52,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 118);
+            this.label1.Location = new System.Drawing.Point(211, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Name";
+            this.label1.Text = "IC Number";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
@@ -64,18 +64,19 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(218, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 265);
+            this.button1.Location = new System.Drawing.Point(335, 245);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 36);
+            this.button1.Size = new System.Drawing.Size(116, 53);
             this.button1.TabIndex = 4;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -89,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
