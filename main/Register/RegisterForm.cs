@@ -1,92 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using System.Security.Cryptography;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Register
 {
-    public partial class RegisterForm: Form
+    public partial class RegisterForm : Form
     {
         public RegisterForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private async void buttonRegister_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //register button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string icNumber = textBox1.Text.Trim();
-            string password = textBox2.Text;
-
-            if (string.IsNullOrEmpty(icNumber))
-            {
-                MessageBox.Show("IC Number cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Password cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            string ic = textBoxIc.Text.Trim();
+            string password = textBoxPassword.Text;
             string hashedPassword = HashPassword(password);
 
-            MessageBox.Show($"Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Launch LoginForm and pass the IC and hashed password
-            LoginForm loginForm = new LoginForm(icNumber, hashedPassword);
-            loginForm.Show();
-            this.Hide();
+            await RegisterUserAsync(ic, hashedPassword);
         }
 
-
-        //ic number 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private async Task RegisterUserAsync(string ic, string hashedPassword)
         {
+            using HttpClient client = new HttpClient();
 
-        }
-        //password
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
+            var user = new User { IcNumber = ic, HashedPassword = hashedPassword };
 
-        }
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
+            var response = await client.PostAsJsonAsync("https://localhost:5001/users/register", user);
+
+            if (response.IsSuccessStatusCode)
             {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2")); // Convert to hex string
-                }
-                return builder.ToString();
+                MessageBox.Show("Registration successful via API!");
+            }
+            else
+            {
+                string error = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Registration failed: {error}");
             }
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        private string HashPassword(string password)
         {
+            using SHA256 sha256 = SHA256.Create();
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in bytes)
+            {
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+        }
 
+        // Local class (same as API model)
+        private class User
+        {
+            public string IcNumber { get; set; }
+            public string HashedPassword { get; set; }
         }
     }
 }
