@@ -16,10 +16,10 @@ namespace Register
             InitializeComponent();
         }
 
-        private async void buttonRegister_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            string ic = textBoxIc.Text.Trim();
-            string password = textBoxPassword.Text;
+            string ic = textBox1.Text.Trim();
+            string password = textBox2.Text;
             string hashedPassword = HashPassword(password);
 
             await RegisterUserAsync(ic, hashedPassword);
@@ -31,11 +31,13 @@ namespace Register
 
             var user = new User { IcNumber = ic, HashedPassword = hashedPassword };
 
-            var response = await client.PostAsJsonAsync("https://localhost:5001/users/register", user);
+            var response = await client.PostAsJsonAsync("http://localhost:5204/users/register", user);
+
 
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Registration successful via API!");
+                Console.WriteLine($"Registering: {hashedPassword}");
             }
             else
             {
@@ -62,5 +64,16 @@ namespace Register
             public string IcNumber { get; set; }
             public string HashedPassword { get; set; }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
