@@ -19,13 +19,11 @@ namespace Register
 
         private void userLoginButton(object sender, EventArgs e)
         {
-            string dummyIC = "123456789012";
-            string dummyHashedPassword = "e3afed0047b08059d0fada10f400c1e5"; // Sample hash
-
-            LoginForm loginForm = new LoginForm(dummyIC, dummyHashedPassword);
+            LoginForm loginForm = new LoginForm(); // No parameters
             loginForm.Show();
             this.Hide();
         }
+
 
         private void adminLoginButton(object sender, EventArgs e)
         {

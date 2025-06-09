@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UserAuthApi.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using UserAuthApi.Models;
+using UserAuthApi.Data;
 
 namespace UserAuthApi.Controllers
 {
@@ -9,24 +11,29 @@ namespace UserAuthApi.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        // In-memory user storage (for demo only!)
-        private static List<User> users = new List<User>();
+        private readonly UserStore _userStore = new UserStore();
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] User user)
+        public async Task<IActionResult> Register([FromBody] User user)
         {
+            var users = await _userStore.LoadUsersAsync();
+
             if (users.Any(u => u.IcNumber == user.IcNumber))
             {
                 return BadRequest("User already exists.");
             }
 
             users.Add(user);
+            await _userStore.SaveUsersAsync(users);
+
             return Ok("Registration successful");
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] User loginUser)
+        public async Task<IActionResult> Login([FromBody] User loginUser)
         {
+            var users = await _userStore.LoadUsersAsync();
+
             var user = users.SingleOrDefault(u => u.IcNumber == loginUser.IcNumber && u.HashedPassword == loginUser.HashedPassword);
             if (user == null)
                 return Unauthorized("Invalid IC or password");

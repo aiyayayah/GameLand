@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,12 +21,16 @@ namespace Register
             string password = textBox2.Text;
             string hashedPassword = HashPassword(password);
 
-            bool loginSuccess = await LoginUserAsync(ic, hashedPassword);
+            using HttpClient client = new HttpClient();
 
-            if (loginSuccess)
+            var loginData = new { IcNumber = ic, HashedPassword = hashedPassword };
+
+            var response = await client.PostAsJsonAsync("http://localhost:5204/users/login", loginData);
+
+            if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Proceed to dashboard or next form
+                // proceed...
             }
             else
             {
@@ -34,31 +38,23 @@ namespace Register
             }
         }
 
-        private async Task<bool> LoginUserAsync(string ic, string hashedPassword)
+
+        private async Task LoginUserAsync(string ic, string hashedPassword)
         {
             using HttpClient client = new HttpClient();
 
-            var user = new User { IcNumber = ic, HashedPassword = hashedPassword };
+            var loginRequest = new User { IcNumber = ic, HashedPassword = hashedPassword };
+            var response = await client.PostAsJsonAsync("http://localhost:5204/users/login", loginRequest);
 
-            try
+            if (response.IsSuccessStatusCode)
             {
-                var response = await client.PostAsJsonAsync("http://localhost:5204/users/login", user);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    string error = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine("Login failed: " + error);
-                    return false;
-                }
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Navigate to dashboard or next form here
             }
-            catch (HttpRequestException ex)
+            else
             {
-                MessageBox.Show("Could not connect to the API. Make sure it's running.\n\n" + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                string error = await response.Content.ReadAsStringAsync();
+                MessageBox.Show($"Login failed: {error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,5 +75,9 @@ namespace Register
             public string IcNumber { get; set; }
             public string HashedPassword { get; set; }
         }
+
+        private void label1_Click(object sender, EventArgs e) { }
+
+        private void label2_Click(object sender, EventArgs e) { }
     }
 }
