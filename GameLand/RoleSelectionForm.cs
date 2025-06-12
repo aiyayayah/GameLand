@@ -19,7 +19,7 @@ namespace GameLand
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            UserForm userForm = new UserForm();
+            labelLogin userForm = new labelLogin();
             userForm.Show();
             this.Hide(); // hide current form
         }
