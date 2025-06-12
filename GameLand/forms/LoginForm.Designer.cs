@@ -95,11 +95,11 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cambria", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.Control;
-            this.title.Location = new System.Drawing.Point(488, 205);
+            this.title.Location = new System.Drawing.Point(305, 208);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(400, 65);
+            this.title.Size = new System.Drawing.Size(749, 65);
             this.title.TabIndex = 19;
-            this.title.Text = "Welcome Back";
+            this.title.Text = "Welcome Back to GameLand";
             this.title.Click += new System.EventHandler(this.title_Click);
             // 
             // LoginForm
