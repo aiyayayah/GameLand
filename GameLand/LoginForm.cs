@@ -39,5 +39,10 @@ namespace GameLand
                 }
             }
         }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

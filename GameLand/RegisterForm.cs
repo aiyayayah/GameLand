@@ -105,5 +105,15 @@ namespace GameLand
             login.Show();
             this.Hide(); // optional: hides the registration form
         }
+
+        private void labelConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,5 +31,9 @@ namespace GameLand
             this.Hide(); // hide current form
         }
 
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
