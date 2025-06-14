@@ -29,65 +29,84 @@
         private void InitializeComponent()
         {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.dgvAvailableItems = new System.Windows.Forms.DataGridView();
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            this.dgvBorrowedItems = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(436, 98);
+            this.lblWelcome.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(585, 30);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(51, 20);
+            this.lblWelcome.Size = new System.Drawing.Size(103, 37);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "label1";
+            this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
             // 
-            // dgvItems
+            // dgvAvailableItems
             // 
-            this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(55, 130);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.RowHeadersWidth = 62;
-            this.dgvItems.RowTemplate.Height = 28;
-            this.dgvItems.Size = new System.Drawing.Size(1114, 481);
-            this.dgvItems.TabIndex = 1;
+            this.dgvAvailableItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAvailableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAvailableItems.Location = new System.Drawing.Point(109, 121);
+            this.dgvAvailableItems.Name = "dgvAvailableItems";
+            this.dgvAvailableItems.RowHeadersWidth = 62;
+            this.dgvAvailableItems.RowTemplate.Height = 28;
+            this.dgvAvailableItems.Size = new System.Drawing.Size(1107, 356);
+            this.dgvAvailableItems.TabIndex = 1;
+            this.dgvAvailableItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(354, 662);
+            this.btnBorrow.Location = new System.Drawing.Point(579, 494);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(133, 51);
             this.btnBorrow.TabIndex = 2;
-            this.btnBorrow.Text = "button1";
+            this.btnBorrow.Text = "Borrow";
             this.btnBorrow.UseVisualStyleBackColor = true;
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click_1);
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(597, 662);
+            this.btnReturn.Location = new System.Drawing.Point(579, 748);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(133, 51);
             this.btnReturn.TabIndex = 3;
-            this.btnReturn.Text = "button2";
+            this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click_1);
+            // 
+            // dgvBorrowedItems
+            // 
+            this.dgvBorrowedItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBorrowedItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBorrowedItems.Location = new System.Drawing.Point(109, 568);
+            this.dgvBorrowedItems.Name = "dgvBorrowedItems";
+            this.dgvBorrowedItems.RowHeadersWidth = 62;
+            this.dgvBorrowedItems.RowTemplate.Height = 28;
+            this.dgvBorrowedItems.Size = new System.Drawing.Size(1107, 156);
+            this.dgvBorrowedItems.TabIndex = 4;
+            this.dgvBorrowedItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowedItems_CellContentClick);
             // 
             // UserDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 829);
+            this.Controls.Add(this.dgvBorrowedItems);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
-            this.Controls.Add(this.dgvItems);
+            this.Controls.Add(this.dgvAvailableItems);
             this.Controls.Add(this.lblWelcome);
             this.Name = "UserDashboardForm";
             this.Text = "UserDashboardForm";
             this.Load += new System.EventHandler(this.UserDashboardForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,8 +115,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.DataGridView dgvAvailableItems;
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.DataGridView dgvBorrowedItems;
     }
 }
