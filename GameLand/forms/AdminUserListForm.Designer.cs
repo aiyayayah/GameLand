@@ -36,13 +36,12 @@
             // dataGridViewUsers
             // 
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(115, 49);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(37, 49);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 62;
             this.dataGridViewUsers.RowTemplate.Height = 28;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1046, 639);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1323, 768);
             this.dataGridViewUsers.TabIndex = 0;
-        
             // 
             // AdminUserListForm
             // 

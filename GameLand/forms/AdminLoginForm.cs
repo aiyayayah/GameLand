@@ -32,18 +32,13 @@ namespace GameLand
                 MessageBox.Show("Please enter both Staff ID and Password.");
                 return;
             }
-
-            // ✅ CORRECTED CONNECTION STRING for LocalDB
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GameLand;Integrated Security=True";
 
             try
             {
-                MessageBox.Show("Connection object created."); // Step 1
-
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open(); // Step 2
-                    MessageBox.Show("Connection opened successfully!"); // Step 3
+                    conn.Open(); 
 
                     string query = "SELECT COUNT(*) FROM Admins WHERE StaffID = @StaffID AND Password = @Password";
 
@@ -53,13 +48,11 @@ namespace GameLand
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         int result = (int)cmd.ExecuteScalar();
-                        MessageBox.Show($"Query result: {result}"); // Step 4
 
                         if (result > 0)
                         {
                             MessageBox.Show("Login successful! Welcome Admin.");
 
-                            // ✅ Open AdminUserListForm
                             AdminUserListForm form = new AdminUserListForm();
                             form.Show();
                             this.Hide(); // optional: hide the login form
@@ -75,6 +68,11 @@ namespace GameLand
             {
                 MessageBox.Show("An error occurred:\n" + ex.Message);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

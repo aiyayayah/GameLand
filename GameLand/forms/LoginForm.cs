@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using GameLand.forms;
 
 namespace GameLand
 {
@@ -23,15 +24,20 @@ namespace GameLand
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Users WHERE ICNumber = @IC AND Password = @Password";
+                string query = "SELECT Name FROM Users WHERE ICNumber = @IC AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IC", ic);
                 cmd.Parameters.AddWithValue("@Password", password);
 
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
+                object result = cmd.ExecuteScalar();
+                if (result != null)
                 {
+                    string name = result.ToString();
                     MessageBox.Show("Login successful!");
+
+                    this.Hide(); // Optional: hide login form
+                    UserDashboardForm form = new UserDashboardForm(name, ic); // Pass name and IC
+                    form.Show();
                 }
                 else
                 {
@@ -39,6 +45,7 @@ namespace GameLand
                 }
             }
         }
+
 
         private void title_Click(object sender, EventArgs e)
         {

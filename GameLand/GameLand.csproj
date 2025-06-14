@@ -80,6 +80,12 @@
     <Compile Include="forms\RoleSelectionForm.Designer.cs">
       <DependentUpon>RoleSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\UserDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UserDashboardForm.Designer.cs">
+      <DependentUpon>UserDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\AdminLoginForm.resx">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UserDashboardForm.resx">
+      <DependentUpon>UserDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

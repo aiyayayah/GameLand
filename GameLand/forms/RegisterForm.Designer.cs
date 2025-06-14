@@ -74,7 +74,6 @@
             this.textBoxIC.Name = "textBoxIC";
             this.textBoxIC.Size = new System.Drawing.Size(284, 35);
             this.textBoxIC.TabIndex = 3;
-            this.textBoxIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxIC.TextChanged += new System.EventHandler(this.txtIC_TextChanged);
             // 
             // labelIC
