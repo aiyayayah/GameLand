@@ -57,11 +57,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\GameServiceRef\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="forms\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,10 +127,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GameLandWebServiceRef\GameService.wsdl" />
-    <None Include="Connected Services\GameServiceRef\GameLand.GameServiceRef.HelloResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GameServiceRef\GameService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,22 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\GameLandWebServiceRef\" />
-    <WCFMetadataStorage Include="Connected Services\GameServiceRef\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameServiceRef\GameService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameServiceRef\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameServiceRef\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GameServiceRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\GameLandWebServiceRef\GameService.disco" />
