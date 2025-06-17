@@ -33,6 +33,8 @@
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.dgvBorrowedItems = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedItems)).BeginInit();
             this.SuspendLayout();
@@ -92,11 +94,31 @@
             this.dgvBorrowedItems.TabIndex = 4;
             this.dgvBorrowedItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowedItems_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(758, 748);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 51);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Calculate";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(434, 758);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(110, 26);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // UserDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 829);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvBorrowedItems);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
@@ -119,5 +141,7 @@
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.DataGridView dgvBorrowedItems;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
