@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 using GameLand.forms;
+using GameLand.GameLandWebServiceRef; // Namespace for service reference
 
 namespace GameLand
 {
@@ -20,29 +21,26 @@ namespace GameLand
             string ic = textBoxIC.Text.Trim();
             string password = textBoxPassword.Text.Trim();
 
-            string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                conn.Open();
-                string query = "SELECT Name FROM Users WHERE ICNumber = @IC AND Password = @Password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@IC", ic);
-                cmd.Parameters.AddWithValue("@Password", password);
+               GameServiceSoapClient service = new GameServiceSoapClient();
+                string name = service.LoginUser(ic, password);
 
-                object result = cmd.ExecuteScalar();
-                if (result != null)
+                if (!string.IsNullOrEmpty(name))
                 {
-                    string name = result.ToString();
                     MessageBox.Show("Login successful!");
-
-                    this.Hide(); // Optional: hide login form
-                    UserDashboardForm form = new UserDashboardForm(name, ic); // Pass name and IC
+                    this.Hide();
+                    UserDashboardForm form = new UserDashboardForm(name, ic);
                     form.Show();
                 }
                 else
                 {
                     MessageBox.Show("Invalid IC or Password.");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login failed due to a service error:\n" + ex.Message);
             }
         }
 

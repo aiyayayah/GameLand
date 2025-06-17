@@ -126,6 +126,9 @@
     <None Include="Connected Services\GameLandWebServiceRef\GameLand.GameLandWebServiceRef.HelloResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\GameLandWebServiceRef\GameLand.GameLandWebServiceRef.LoginUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\GameLandWebServiceRef\GameService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

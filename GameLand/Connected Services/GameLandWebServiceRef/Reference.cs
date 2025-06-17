@@ -27,6 +27,13 @@ namespace GameLand.GameLandWebServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateChargeAsync(double hours);
+        
+        // CODEGEN: Generating message contract since element name ic from namespace http://gameland.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
+        GameLand.GameLandWebServiceRef.LoginUserResponse LoginUser(GameLand.GameLandWebServiceRef.LoginUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> LoginUserAsync(GameLand.GameLandWebServiceRef.LoginUserRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -90,6 +97,78 @@ namespace GameLand.GameLandWebServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LoginUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LoginUser", Namespace="http://gameland.com/", Order=0)]
+        public GameLand.GameLandWebServiceRef.LoginUserRequestBody Body;
+        
+        public LoginUserRequest() {
+        }
+        
+        public LoginUserRequest(GameLand.GameLandWebServiceRef.LoginUserRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://gameland.com/")]
+    public partial class LoginUserRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ic;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public LoginUserRequestBody() {
+        }
+        
+        public LoginUserRequestBody(string ic, string password) {
+            this.ic = ic;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class LoginUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="LoginUserResponse", Namespace="http://gameland.com/", Order=0)]
+        public GameLand.GameLandWebServiceRef.LoginUserResponseBody Body;
+        
+        public LoginUserResponse() {
+        }
+        
+        public LoginUserResponse(GameLand.GameLandWebServiceRef.LoginUserResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://gameland.com/")]
+    public partial class LoginUserResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string LoginUserResult;
+        
+        public LoginUserResponseBody() {
+        }
+        
+        public LoginUserResponseBody(string LoginUserResult) {
+            this.LoginUserResult = LoginUserResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GameServiceSoapChannel : GameLand.GameLandWebServiceRef.GameServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -146,6 +225,33 @@ namespace GameLand.GameLandWebServiceRef {
         
         public System.Threading.Tasks.Task<double> CalculateChargeAsync(double hours) {
             return base.Channel.CalculateChargeAsync(hours);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        GameLand.GameLandWebServiceRef.LoginUserResponse GameLand.GameLandWebServiceRef.GameServiceSoap.LoginUser(GameLand.GameLandWebServiceRef.LoginUserRequest request) {
+            return base.Channel.LoginUser(request);
+        }
+        
+        public string LoginUser(string ic, string password) {
+            GameLand.GameLandWebServiceRef.LoginUserRequest inValue = new GameLand.GameLandWebServiceRef.LoginUserRequest();
+            inValue.Body = new GameLand.GameLandWebServiceRef.LoginUserRequestBody();
+            inValue.Body.ic = ic;
+            inValue.Body.password = password;
+            GameLand.GameLandWebServiceRef.LoginUserResponse retVal = ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).LoginUser(inValue);
+            return retVal.Body.LoginUserResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> GameLand.GameLandWebServiceRef.GameServiceSoap.LoginUserAsync(GameLand.GameLandWebServiceRef.LoginUserRequest request) {
+            return base.Channel.LoginUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> LoginUserAsync(string ic, string password) {
+            GameLand.GameLandWebServiceRef.LoginUserRequest inValue = new GameLand.GameLandWebServiceRef.LoginUserRequest();
+            inValue.Body = new GameLand.GameLandWebServiceRef.LoginUserRequestBody();
+            inValue.Body.ic = ic;
+            inValue.Body.password = password;
+            return ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).LoginUserAsync(inValue);
         }
     }
 }
