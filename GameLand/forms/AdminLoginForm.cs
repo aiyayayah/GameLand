@@ -32,43 +32,32 @@ namespace GameLand
                 MessageBox.Show("Please enter both Staff ID and Password.");
                 return;
             }
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GameLand;Integrated Security=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                // Use the correct endpoint name from App.config
+                GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
+
+                string result = client.AdminLogin(staffID, password);
+
+                if (result == "Success")
                 {
-                    conn.Open(); 
-
-                    string query = "SELECT COUNT(*) FROM Admins WHERE StaffID = @StaffID AND Password = @Password";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@StaffID", staffID);
-                        cmd.Parameters.AddWithValue("@Password", password);
-
-                        int result = (int)cmd.ExecuteScalar();
-
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Login successful! Welcome Admin.");
-
-                            AdminUserListForm form = new AdminUserListForm();
-                            form.Show();
-                            this.Hide(); // optional: hide the login form
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid Staff ID or Password.");
-                        }
-                    }
+                    MessageBox.Show("Login successful! Welcome Admin.");
+                    AdminUserListForm form = new AdminUserListForm();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Staff ID or Password.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred:\n" + ex.Message);
+                MessageBox.Show("Service error:\n" + ex.Message);
             }
         }
+
 
         private void label3_Click(object sender, EventArgs e)
         {

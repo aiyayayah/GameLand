@@ -8,11 +8,11 @@ using GameLand.Services;
 
 namespace GameLand
 {
-    public partial class labelLogin : Form
+    public partial class RegisterForm : Form
     {
         string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
 
-        public labelLogin()
+        public RegisterForm()
         {
             InitializeComponent();
         }

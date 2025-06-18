@@ -29,6 +29,13 @@ namespace GameLand.GameLandWebServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
         System.Threading.Tasks.Task<string> LoginUserAsync(string ic, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/AdminLogin", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string AdminLogin(string staffID, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/AdminLogin", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> AdminLoginAsync(string staffID, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         double CalculateCharge(double hours);
@@ -85,6 +92,14 @@ namespace GameLand.GameLandWebServiceRef {
         
         public System.Threading.Tasks.Task<string> LoginUserAsync(string ic, string password) {
             return base.Channel.LoginUserAsync(ic, password);
+        }
+        
+        public string AdminLogin(string staffID, string password) {
+            return base.Channel.AdminLogin(staffID, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> AdminLoginAsync(string staffID, string password) {
+            return base.Channel.AdminLoginAsync(staffID, password);
         }
         
         public double CalculateCharge(double hours) {

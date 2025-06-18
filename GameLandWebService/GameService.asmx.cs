@@ -65,6 +65,21 @@ namespace GameLandWebService
             }
         }
 
+        [WebMethod]
+        public string AdminLogin(string staffID, string password)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Admins WHERE StaffID = @StaffID AND Password = @Password";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@StaffID", staffID);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0 ? "Success" : "Fail";
+            }
+        }
 
         [WebMethod]
         public double CalculateCharge(double hours)
