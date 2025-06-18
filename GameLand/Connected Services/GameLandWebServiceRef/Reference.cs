@@ -15,158 +15,33 @@ namespace GameLand.GameLandWebServiceRef {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://gameland.com/", ConfigurationName="GameLandWebServiceRef.GameServiceSoap")]
     public interface GameServiceSoap {
         
-        // CODEGEN: Generating message contract since element name HelloResult from namespace http://gameland.com/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/Hello", ReplyAction="*")]
-        GameLand.GameLandWebServiceRef.HelloResponse Hello(GameLand.GameLandWebServiceRef.HelloRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/RegisterUser", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string RegisterUser(string name, string ic, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/Hello", ReplyAction="*")]
-        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.HelloResponse> HelloAsync(GameLand.GameLandWebServiceRef.HelloRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/RegisterUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string LoginUser(string ic, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> LoginUserAsync(string ic, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         double CalculateCharge(double hours);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculateChargeAsync(double hours);
         
-        // CODEGEN: Generating message contract since element name ic from namespace http://gameland.com/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
-        GameLand.GameLandWebServiceRef.LoginUserResponse LoginUser(GameLand.GameLandWebServiceRef.LoginUserRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string CheckConnectionString();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> LoginUserAsync(GameLand.GameLandWebServiceRef.LoginUserRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Hello", Namespace="http://gameland.com/", Order=0)]
-        public GameLand.GameLandWebServiceRef.HelloRequestBody Body;
-        
-        public HelloRequest() {
-        }
-        
-        public HelloRequest(GameLand.GameLandWebServiceRef.HelloRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloRequestBody {
-        
-        public HelloRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloResponse", Namespace="http://gameland.com/", Order=0)]
-        public GameLand.GameLandWebServiceRef.HelloResponseBody Body;
-        
-        public HelloResponse() {
-        }
-        
-        public HelloResponse(GameLand.GameLandWebServiceRef.HelloResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://gameland.com/")]
-    public partial class HelloResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloResult;
-        
-        public HelloResponseBody() {
-        }
-        
-        public HelloResponseBody(string HelloResult) {
-            this.HelloResult = HelloResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class LoginUserRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="LoginUser", Namespace="http://gameland.com/", Order=0)]
-        public GameLand.GameLandWebServiceRef.LoginUserRequestBody Body;
-        
-        public LoginUserRequest() {
-        }
-        
-        public LoginUserRequest(GameLand.GameLandWebServiceRef.LoginUserRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://gameland.com/")]
-    public partial class LoginUserRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string ic;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string password;
-        
-        public LoginUserRequestBody() {
-        }
-        
-        public LoginUserRequestBody(string ic, string password) {
-            this.ic = ic;
-            this.password = password;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class LoginUserResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="LoginUserResponse", Namespace="http://gameland.com/", Order=0)]
-        public GameLand.GameLandWebServiceRef.LoginUserResponseBody Body;
-        
-        public LoginUserResponse() {
-        }
-        
-        public LoginUserResponse(GameLand.GameLandWebServiceRef.LoginUserResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://gameland.com/")]
-    public partial class LoginUserResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string LoginUserResult;
-        
-        public LoginUserResponseBody() {
-        }
-        
-        public LoginUserResponseBody(string LoginUserResult) {
-            this.LoginUserResult = LoginUserResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> CheckConnectionStringAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -196,27 +71,20 @@ namespace GameLand.GameLandWebServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GameLand.GameLandWebServiceRef.HelloResponse GameLand.GameLandWebServiceRef.GameServiceSoap.Hello(GameLand.GameLandWebServiceRef.HelloRequest request) {
-            return base.Channel.Hello(request);
+        public string RegisterUser(string name, string ic, string password) {
+            return base.Channel.RegisterUser(name, ic, password);
         }
         
-        public string Hello() {
-            GameLand.GameLandWebServiceRef.HelloRequest inValue = new GameLand.GameLandWebServiceRef.HelloRequest();
-            inValue.Body = new GameLand.GameLandWebServiceRef.HelloRequestBody();
-            GameLand.GameLandWebServiceRef.HelloResponse retVal = ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).Hello(inValue);
-            return retVal.Body.HelloResult;
+        public System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password) {
+            return base.Channel.RegisterUserAsync(name, ic, password);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.HelloResponse> GameLand.GameLandWebServiceRef.GameServiceSoap.HelloAsync(GameLand.GameLandWebServiceRef.HelloRequest request) {
-            return base.Channel.HelloAsync(request);
+        public string LoginUser(string ic, string password) {
+            return base.Channel.LoginUser(ic, password);
         }
         
-        public System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.HelloResponse> HelloAsync() {
-            GameLand.GameLandWebServiceRef.HelloRequest inValue = new GameLand.GameLandWebServiceRef.HelloRequest();
-            inValue.Body = new GameLand.GameLandWebServiceRef.HelloRequestBody();
-            return ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).HelloAsync(inValue);
+        public System.Threading.Tasks.Task<string> LoginUserAsync(string ic, string password) {
+            return base.Channel.LoginUserAsync(ic, password);
         }
         
         public double CalculateCharge(double hours) {
@@ -227,31 +95,12 @@ namespace GameLand.GameLandWebServiceRef {
             return base.Channel.CalculateChargeAsync(hours);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        GameLand.GameLandWebServiceRef.LoginUserResponse GameLand.GameLandWebServiceRef.GameServiceSoap.LoginUser(GameLand.GameLandWebServiceRef.LoginUserRequest request) {
-            return base.Channel.LoginUser(request);
+        public string CheckConnectionString() {
+            return base.Channel.CheckConnectionString();
         }
         
-        public string LoginUser(string ic, string password) {
-            GameLand.GameLandWebServiceRef.LoginUserRequest inValue = new GameLand.GameLandWebServiceRef.LoginUserRequest();
-            inValue.Body = new GameLand.GameLandWebServiceRef.LoginUserRequestBody();
-            inValue.Body.ic = ic;
-            inValue.Body.password = password;
-            GameLand.GameLandWebServiceRef.LoginUserResponse retVal = ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).LoginUser(inValue);
-            return retVal.Body.LoginUserResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> GameLand.GameLandWebServiceRef.GameServiceSoap.LoginUserAsync(GameLand.GameLandWebServiceRef.LoginUserRequest request) {
-            return base.Channel.LoginUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GameLand.GameLandWebServiceRef.LoginUserResponse> LoginUserAsync(string ic, string password) {
-            GameLand.GameLandWebServiceRef.LoginUserRequest inValue = new GameLand.GameLandWebServiceRef.LoginUserRequest();
-            inValue.Body = new GameLand.GameLandWebServiceRef.LoginUserRequestBody();
-            inValue.Body.ic = ic;
-            inValue.Body.password = password;
-            return ((GameLand.GameLandWebServiceRef.GameServiceSoap)(this)).LoginUserAsync(inValue);
+        public System.Threading.Tasks.Task<string> CheckConnectionStringAsync() {
+            return base.Channel.CheckConnectionStringAsync();
         }
     }
 }

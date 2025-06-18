@@ -9,6 +9,36 @@ namespace GameLandWebService
     public class GameService : WebService
     {
 
+        [WebMethod]
+        public string RegisterUser(string name, string ic, string password)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+
+                string checkQuery = "SELECT COUNT(*) FROM Users WHERE ICNumber = @IC";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                checkCmd.Parameters.AddWithValue("@IC", ic);
+
+                int exists = (int)checkCmd.ExecuteScalar();
+
+                if (exists > 0)
+                {
+                    return "❌ IC already exists.";
+                }
+
+                string insertQuery = "INSERT INTO Users (Name, ICNumber, Password) VALUES (@Name, @IC, @Password)";
+                SqlCommand cmd = new SqlCommand(insertQuery, conn);
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@IC", ic);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.ExecuteNonQuery();
+
+                return "✅ Registration successful.";
+            }
+        }
 
 
         [WebMethod]
@@ -34,7 +64,6 @@ namespace GameLandWebService
                 }
             }
         }
-        [WebMethod]
 
 
         [WebMethod]
@@ -42,6 +71,9 @@ namespace GameLandWebService
         {
             return hours * 5.00;
         }
+
+
+        [WebMethod]
         public string CheckConnectionString()
         {
             var conn = ConfigurationManager.ConnectionStrings["myConn"];

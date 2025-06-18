@@ -23,8 +23,9 @@ namespace GameLand
 
             try
             {
-               GameServiceSoapClient service = new GameServiceSoapClient();
-                string name = service.LoginUser(ic, password);
+                GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient();
+
+                string name = client.LoginUser(ic, password);
 
                 if (!string.IsNullOrEmpty(name))
                 {

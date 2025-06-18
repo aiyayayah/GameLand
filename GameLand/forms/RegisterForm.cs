@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Configuration;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using GameLand.Services;
 
 namespace GameLand
 {
@@ -36,33 +37,18 @@ namespace GameLand
                 return;
             }
 
-            string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connStr))
+            // Call web service
+            try
             {
-                conn.Open();
+                GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
 
-                // Check if IC already exists
-                string checkQuery = "SELECT COUNT(*) FROM Users WHERE ICNumber = @IC";
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                checkCmd.Parameters.AddWithValue("@IC", ic);
-                int exists = (int)checkCmd.ExecuteScalar();
+                string result = client.RegisterUser(name, ic, password);
 
-                if (exists > 0)
-                {
-                    MessageBox.Show("An account with this IC already exists.");
-                    return;
-                }
-
-                // Insert new user
-                string insertQuery = "INSERT INTO Users (Name, ICNumber, Password) VALUES (@Name, @IC, @Password)";
-                SqlCommand cmd = new SqlCommand(insertQuery, conn);
-                cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@IC", ic);
-                cmd.Parameters.AddWithValue("@Password", password);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Registration successful!");
-                // Optionally, redirect to login form
+                MessageBox.Show(result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

@@ -2,27 +2,19 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://gameland.com/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://gameland.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://gameland.com/">
-      <s:element name="Hello">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloResponse">
+      <s:element name="RegisterUser">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CalculateCharge">
+      <s:element name="RegisterUserResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="hours" type="s:double" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CalculateChargeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CalculateChargeResult" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterUserResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -41,19 +33,39 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CalculateCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hours" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateChargeResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnectionString">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckConnectionStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckConnectionStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="double" type="s:double" />
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloSoapIn">
-    <wsdl:part name="parameters" element="tns:Hello" />
+  <wsdl:message name="RegisterUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
   </wsdl:message>
-  <wsdl:message name="HelloSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloResponse" />
-  </wsdl:message>
-  <wsdl:message name="CalculateChargeSoapIn">
-    <wsdl:part name="parameters" element="tns:CalculateCharge" />
-  </wsdl:message>
-  <wsdl:message name="CalculateChargeSoapOut">
-    <wsdl:part name="parameters" element="tns:CalculateChargeResponse" />
+  <wsdl:message name="RegisterUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
   </wsdl:message>
   <wsdl:message name="LoginUserSoapIn">
     <wsdl:part name="parameters" element="tns:LoginUser" />
@@ -61,33 +73,126 @@
   <wsdl:message name="LoginUserSoapOut">
     <wsdl:part name="parameters" element="tns:LoginUserResponse" />
   </wsdl:message>
+  <wsdl:message name="CalculateChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateCharge" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionStringSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionStringSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="ic" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserHttpGetIn">
+    <wsdl:part name="ic" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChargeHttpGetIn">
+    <wsdl:part name="hours" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChargeHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionStringHttpGetIn" />
+  <wsdl:message name="CheckConnectionStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="ic" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserHttpPostIn">
+    <wsdl:part name="ic" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChargeHttpPostIn">
+    <wsdl:part name="hours" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChargeHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionStringHttpPostIn" />
+  <wsdl:message name="CheckConnectionStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:portType name="GameServiceSoap">
-    <wsdl:operation name="Hello">
-      <wsdl:input message="tns:HelloSoapIn" />
-      <wsdl:output message="tns:HelloSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <wsdl:input message="tns:CalculateChargeSoapIn" />
-      <wsdl:output message="tns:CalculateChargeSoapOut" />
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserSoapIn" />
+      <wsdl:output message="tns:RegisterUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <wsdl:input message="tns:LoginUserSoapIn" />
       <wsdl:output message="tns:LoginUserSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <wsdl:input message="tns:CalculateChargeSoapIn" />
+      <wsdl:output message="tns:CalculateChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <wsdl:input message="tns:CheckConnectionStringSoapIn" />
+      <wsdl:output message="tns:CheckConnectionStringSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GameServiceHttpGet">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserHttpGetIn" />
+      <wsdl:output message="tns:RegisterUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input message="tns:LoginUserHttpGetIn" />
+      <wsdl:output message="tns:LoginUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <wsdl:input message="tns:CalculateChargeHttpGetIn" />
+      <wsdl:output message="tns:CalculateChargeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <wsdl:input message="tns:CheckConnectionStringHttpGetIn" />
+      <wsdl:output message="tns:CheckConnectionStringHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GameServiceHttpPost">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserHttpPostIn" />
+      <wsdl:output message="tns:RegisterUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input message="tns:LoginUserHttpPostIn" />
+      <wsdl:output message="tns:LoginUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <wsdl:input message="tns:CalculateChargeHttpPostIn" />
+      <wsdl:output message="tns:CalculateChargeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <wsdl:input message="tns:CheckConnectionStringHttpPostIn" />
+      <wsdl:output message="tns:CheckConnectionStringHttpPostOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="GameServiceSoap" type="tns:GameServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Hello">
-      <soap:operation soapAction="http://gameland.com/Hello" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <soap:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://gameland.com/RegisterUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -104,20 +209,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <soap:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <soap:operation soapAction="http://gameland.com/CheckConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="GameServiceSoap12" type="tns:GameServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Hello">
-      <soap12:operation soapAction="http://gameland.com/Hello" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <soap12:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="http://gameland.com/RegisterUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -134,6 +248,102 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <soap12:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <soap12:operation soapAction="http://gameland.com/CheckConnectionString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GameServiceHttpGet" type="tns:GameServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RegisterUser">
+      <http:operation location="/RegisterUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <http:operation location="/LoginUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <http:operation location="/CalculateCharge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <http:operation location="/CheckConnectionString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GameServiceHttpPost" type="tns:GameServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RegisterUser">
+      <http:operation location="/RegisterUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <http:operation location="/LoginUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCharge">
+      <http:operation location="/CalculateCharge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnectionString">
+      <http:operation location="/CheckConnectionString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="GameService">
     <wsdl:port name="GameServiceSoap" binding="tns:GameServiceSoap">
@@ -141,6 +351,12 @@
     </wsdl:port>
     <wsdl:port name="GameServiceSoap12" binding="tns:GameServiceSoap12">
       <soap12:address location="https://localhost:44378/GameService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GameServiceHttpGet" binding="tns:GameServiceHttpGet">
+      <http:address location="https://localhost:44378/GameService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GameServiceHttpPost" binding="tns:GameServiceHttpPost">
+      <http:address location="https://localhost:44378/GameService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
