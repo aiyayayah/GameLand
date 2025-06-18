@@ -33,14 +33,38 @@ namespace GameLand.forms
 
         private void LoadAvailableItems()
         {
-            dgvAvailableItems.DataSource = _gameCardService.GetAvailableItems();
+            DataTable table = _gameCardService.GetAvailableItems();
+
+            // Add a new column for masked IC
+            if (!table.Columns.Contains("MaskedIC"))
+                table.Columns.Add("MaskedIC", typeof(string));
+
+            foreach (DataRow row in table.Rows)
+            {
+                if (row["UserIC_Last4"] != DBNull.Value)
+                {
+                    string last4 = row["UserIC_Last4"].ToString();
+                    row["MaskedIC"] = "********" + last4;
+                }
+            }
+
+            dgvAvailableItems.DataSource = table;
 
             dgvAvailableItems.Columns["ItemID"].HeaderText = "ID";
             dgvAvailableItems.Columns["ItemName"].HeaderText = "Game Name";
             dgvAvailableItems.Columns["ItemPlatform"].HeaderText = "Platform";
             dgvAvailableItems.Columns["ItemStatus"].HeaderText = "Status";
             dgvAvailableItems.Columns["ItemCharges"].HeaderText = "Charges (RM)";
-            dgvAvailableItems.Columns["UserIC_Last4"].HeaderText = "User IC (Last 4)";
+            if (dgvAvailableItems.Columns.Contains("MaskedIC"))
+            {
+                dgvAvailableItems.Columns["MaskedIC"].HeaderText = "Borrower";
+            }
+
+            // Optional: Hide raw UserIC_Last4 column
+            if (dgvAvailableItems.Columns.Contains("UserIC_Last4"))
+            {
+                dgvAvailableItems.Columns["UserIC_Last4"].Visible = false;
+            }
         }
 
         private void LoadUserBorrowedItems()
