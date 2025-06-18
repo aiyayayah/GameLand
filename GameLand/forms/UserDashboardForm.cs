@@ -19,7 +19,9 @@ namespace GameLand.forms
             userName = name;
             userIC = ic;
             _gameCardService = new GameCardService();
-            _webServiceClient = new GameServiceSoapClient(); // Initialize web service client
+
+            // Use named endpoint to avoid "multiple endpoint" error
+            _webServiceClient = new GameServiceSoapClient("GameServiceSoap");
         }
 
         private void UserDashboardForm_Load(object sender, EventArgs e)
@@ -77,12 +79,23 @@ namespace GameLand.forms
                 return;
             }
 
-            int recordId = Convert.ToInt32(dgvBorrowedItems.SelectedRows[0].Cells["RecordID"].Value);
-            string itemId = dgvBorrowedItems.SelectedRows[0].Cells["ItemID"].Value.ToString();
-
             try
             {
+                int recordId = Convert.ToInt32(dgvBorrowedItems.SelectedRows[0].Cells["RecordID"].Value);
+                string itemId = dgvBorrowedItems.SelectedRows[0].Cells["ItemID"].Value.ToString();
+
+                DateTime borrowDate = Convert.ToDateTime(dgvBorrowedItems.SelectedRows[0].Cells["BorrowDate"].Value);
+                DateTime returnDate = DateTime.Now;
+
+                // Call web service to calculate penalty
+                double penalty = _webServiceClient.CalculatePenalty(borrowDate, returnDate);
+
+                // Show penalty (even if 0)
+                MessageBox.Show($"Total penalty: RM{penalty:F2}");
+
+                // Then process the return
                 _gameCardService.ReturnItem(recordId, itemId);
+
                 MessageBox.Show("Item returned successfully!");
                 LoadAvailableItems();
                 LoadUserBorrowedItems();
@@ -93,26 +106,6 @@ namespace GameLand.forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (double.TryParse(textBox1.Text, out double hours))
-            {
-                try
-                {
-                    // Call the web service to calculate charge
-                    double charge = _webServiceClient.CalculateCharge(hours);
-                    MessageBox.Show("Total charge: RM" + charge.ToString("F2"));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error contacting web service: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a valid number of hours.");
-            }
-        }
 
         private void lblWelcome_Click(object sender, EventArgs e)
         {

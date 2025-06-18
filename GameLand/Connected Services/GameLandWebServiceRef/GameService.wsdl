@@ -48,17 +48,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CalculateCharge">
+      <s:element name="CalculatePenalty">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="hours" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="borrowDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="returnDate" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CalculateChargeResponse">
+      <s:element name="CalculatePenaltyResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CalculateChargeResult" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CalculatePenaltyResult" type="s:double" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -94,11 +95,11 @@
   <wsdl:message name="AdminLoginSoapOut">
     <wsdl:part name="parameters" element="tns:AdminLoginResponse" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeSoapIn">
-    <wsdl:part name="parameters" element="tns:CalculateCharge" />
+  <wsdl:message name="CalculatePenaltySoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePenalty" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeSoapOut">
-    <wsdl:part name="parameters" element="tns:CalculateChargeResponse" />
+  <wsdl:message name="CalculatePenaltySoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePenaltyResponse" />
   </wsdl:message>
   <wsdl:message name="CheckConnectionStringSoapIn">
     <wsdl:part name="parameters" element="tns:CheckConnectionString" />
@@ -128,10 +129,11 @@
   <wsdl:message name="AdminLoginHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeHttpGetIn">
-    <wsdl:part name="hours" type="s:string" />
+  <wsdl:message name="CalculatePenaltyHttpGetIn">
+    <wsdl:part name="borrowDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeHttpGetOut">
+  <wsdl:message name="CalculatePenaltyHttpGetOut">
     <wsdl:part name="Body" element="tns:double" />
   </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpGetIn" />
@@ -160,10 +162,11 @@
   <wsdl:message name="AdminLoginHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeHttpPostIn">
-    <wsdl:part name="hours" type="s:string" />
+  <wsdl:message name="CalculatePenaltyHttpPostIn">
+    <wsdl:part name="borrowDate" type="s:string" />
+    <wsdl:part name="returnDate" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="CalculateChargeHttpPostOut">
+  <wsdl:message name="CalculatePenaltyHttpPostOut">
     <wsdl:part name="Body" element="tns:double" />
   </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpPostIn" />
@@ -183,9 +186,9 @@
       <wsdl:input message="tns:AdminLoginSoapIn" />
       <wsdl:output message="tns:AdminLoginSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <wsdl:input message="tns:CalculateChargeSoapIn" />
-      <wsdl:output message="tns:CalculateChargeSoapOut" />
+    <wsdl:operation name="CalculatePenalty">
+      <wsdl:input message="tns:CalculatePenaltySoapIn" />
+      <wsdl:output message="tns:CalculatePenaltySoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringSoapIn" />
@@ -205,9 +208,9 @@
       <wsdl:input message="tns:AdminLoginHttpGetIn" />
       <wsdl:output message="tns:AdminLoginHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <wsdl:input message="tns:CalculateChargeHttpGetIn" />
-      <wsdl:output message="tns:CalculateChargeHttpGetOut" />
+    <wsdl:operation name="CalculatePenalty">
+      <wsdl:input message="tns:CalculatePenaltyHttpGetIn" />
+      <wsdl:output message="tns:CalculatePenaltyHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpGetIn" />
@@ -227,9 +230,9 @@
       <wsdl:input message="tns:AdminLoginHttpPostIn" />
       <wsdl:output message="tns:AdminLoginHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <wsdl:input message="tns:CalculateChargeHttpPostIn" />
-      <wsdl:output message="tns:CalculateChargeHttpPostOut" />
+    <wsdl:operation name="CalculatePenalty">
+      <wsdl:input message="tns:CalculatePenaltyHttpPostIn" />
+      <wsdl:output message="tns:CalculatePenaltyHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpPostIn" />
@@ -265,8 +268,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <soap:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+    <wsdl:operation name="CalculatePenalty">
+      <soap:operation soapAction="http://gameland.com/CalculatePenalty" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -313,8 +316,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <soap12:operation soapAction="http://gameland.com/CalculateCharge" style="document" />
+    <wsdl:operation name="CalculatePenalty">
+      <soap12:operation soapAction="http://gameland.com/CalculatePenalty" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -361,8 +364,8 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <http:operation location="/CalculateCharge" />
+    <wsdl:operation name="CalculatePenalty">
+      <http:operation location="/CalculatePenalty" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -409,8 +412,8 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CalculateCharge">
-      <http:operation location="/CalculateCharge" />
+    <wsdl:operation name="CalculatePenalty">
+      <http:operation location="/CalculatePenalty" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
 
@@ -82,17 +83,27 @@ namespace GameLandWebService
         }
 
         [WebMethod]
-        public double CalculateCharge(double hours)
+        public double CalculatePenalty(DateTime borrowDate, DateTime returnDate)
         {
-            return hours * 5.00;
+            TimeSpan duration = returnDate.Date - borrowDate.Date;
+            int totalDays = duration.Days;
+
+            if (totalDays <= 1) //1day
+            {
+                return 0.0;
+            }
+
+            int overdueDays = totalDays - 7;
+            return overdueDays * 5.0; // RM5 per day
         }
+
 
 
         [WebMethod]
         public string CheckConnectionString()
         {
             var conn = ConfigurationManager.ConnectionStrings["myConn"];
-            return conn != null ? "Connection string found ✅" : "❌ myConn not found in Web.config";
+            return conn != null ? "Connection string found " : "myConn not found in Web.config";
         }
 
     }

@@ -36,12 +36,12 @@ namespace GameLand.GameLandWebServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/AdminLogin", ReplyAction="*")]
         System.Threading.Tasks.Task<string> AdminLoginAsync(string staffID, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculatePenalty", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        double CalculateCharge(double hours);
+        double CalculatePenalty(System.DateTime borrowDate, System.DateTime returnDate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculateCharge", ReplyAction="*")]
-        System.Threading.Tasks.Task<double> CalculateChargeAsync(double hours);
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculatePenalty", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> CalculatePenaltyAsync(System.DateTime borrowDate, System.DateTime returnDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -102,12 +102,12 @@ namespace GameLand.GameLandWebServiceRef {
             return base.Channel.AdminLoginAsync(staffID, password);
         }
         
-        public double CalculateCharge(double hours) {
-            return base.Channel.CalculateCharge(hours);
+        public double CalculatePenalty(System.DateTime borrowDate, System.DateTime returnDate) {
+            return base.Channel.CalculatePenalty(borrowDate, returnDate);
         }
         
-        public System.Threading.Tasks.Task<double> CalculateChargeAsync(double hours) {
-            return base.Channel.CalculateChargeAsync(hours);
+        public System.Threading.Tasks.Task<double> CalculatePenaltyAsync(System.DateTime borrowDate, System.DateTime returnDate) {
+            return base.Channel.CalculatePenaltyAsync(borrowDate, returnDate);
         }
         
         public string CheckConnectionString() {
