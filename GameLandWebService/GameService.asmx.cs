@@ -26,7 +26,7 @@ namespace GameLandWebService
 
                 if (exists > 0)
                 {
-                    return "❌ IC already exists.";
+                    return "IC already exists.";
                 }
 
                 string insertQuery = "INSERT INTO Users (Name, ICNumber, Password) VALUES (@Name, @IC, @Password)";
@@ -36,7 +36,7 @@ namespace GameLandWebService
                 cmd.Parameters.AddWithValue("@Password", password);
                 cmd.ExecuteNonQuery();
 
-                return "✅ Registration successful.";
+                return "Registration successful.";
             }
         }
 

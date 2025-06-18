@@ -37,20 +37,30 @@ namespace GameLand
                 return;
             }
 
-            // Call web service
             try
             {
                 GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
-
                 string result = client.RegisterUser(name, ic, password);
 
-                MessageBox.Show(result);
+                if (result.Contains("Registration successful")) // Make sure this matches your service's return message
+                {
+
+                    // Redirect to login form
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+                    this.Hide(); // Hide registration form
+                }
+                else
+                {
+                    MessageBox.Show(result);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
