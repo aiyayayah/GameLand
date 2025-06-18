@@ -8,17 +8,8 @@ namespace GameLandWebService
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class GameService : WebService
     {
-        [WebMethod]
-        public string Hello()
-        {
-            return "Hello from GameLand!";
-        }
 
-        [WebMethod]
-        public double CalculateCharge(double hours)
-        {
-            return hours * 5.00; 
-        }
+
 
         [WebMethod]
         public string LoginUser(string ic, string password)
@@ -44,6 +35,13 @@ namespace GameLandWebService
             }
         }
         [WebMethod]
+
+
+        [WebMethod]
+        public double CalculateCharge(double hours)
+        {
+            return hours * 5.00;
+        }
         public string CheckConnectionString()
         {
             var conn = ConfigurationManager.ConnectionStrings["myConn"];
