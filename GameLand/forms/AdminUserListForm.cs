@@ -53,7 +53,7 @@ namespace GameLand.forms
         }
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; // Skip header
+            if (e.RowIndex < 0) return; 
 
             string userIC = dataGridViewUsers.Rows[e.RowIndex].Cells["ICNumber"].Value.ToString();
             LoadUserTransactions(userIC);
@@ -69,9 +69,15 @@ namespace GameLand.forms
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     string query = @"
-            SELECT RecordID, ItemID, BorrowDate, ReturnDate 
-            FROM BorrowRecords 
-            WHERE UserIC = @UserIC";
+                SELECT 
+                    br.RecordID,
+                    br.ItemID,
+                    gc.ItemName AS GameName,
+                    br.BorrowDate,
+                    br.ReturnDate
+                FROM BorrowRecords br
+                INNER JOIN GameCards gc ON br.ItemID = gc.ItemID
+                WHERE br.UserIC = @UserIC AND br.ReturnDate IS NULL";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     da.SelectCommand.Parameters.AddWithValue("@UserIC", userIC);
@@ -79,27 +85,14 @@ namespace GameLand.forms
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // Add penalty column
                     dt.Columns.Add("Penalty", typeof(double));
 
-                    // Call web service to calculate penalties
                     foreach (DataRow row in dt.Rows)
                     {
                         DateTime borrowDate = Convert.ToDateTime(row["BorrowDate"]);
-                        DateTime returnDate;
-
-                        if (row["ReturnDate"] == DBNull.Value)
-                        {
-                            returnDate = DateTime.Now;
-                        }
-                        else
-                        {
-                            returnDate = Convert.ToDateTime(row["ReturnDate"]);
-                        }
+                        DateTime returnDate = DateTime.Now;
 
                         double penalty = _webServiceClient.CalculatePenalty(borrowDate, returnDate);
-
-
                         row["Penalty"] = penalty;
                     }
 
@@ -113,7 +106,6 @@ namespace GameLand.forms
                 MessageBox.Show("Error loading transactions: " + ex.Message);
             }
         }
-
 
 
 
