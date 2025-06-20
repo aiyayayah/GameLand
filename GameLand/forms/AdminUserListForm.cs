@@ -54,7 +54,7 @@ namespace GameLand.forms
                 {
                     string query = @"
                 SELECT RecordID, ItemID, BorrowDate, ReturnDate 
-                FROM Transactions 
+                FROM BorrowRecords  
                 WHERE UserIC = @UserIC";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
@@ -118,6 +118,60 @@ namespace GameLand.forms
 
         }
 
+        private void btnUpdateReturn_Click_1(object sender, EventArgs e)
+        {
+            // Make sure a user is selected
+            if (dataGridViewUsers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user first.");
+                return;
+            }
 
+            // Make sure a borrow record is selected
+            if (dgvUserTransactions.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a borrow record to update.");
+                return;
+            }
+
+            // Get selected record ID
+            int recordId = Convert.ToInt32(dgvUserTransactions.SelectedRows[0].Cells["RecordID"].Value);
+
+            try
+            {
+                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    string updateQuery = @"
+                UPDATE BorrowRecords 
+                SET ReturnDate = @ReturnDate 
+                WHERE RecordID = @RecordID";
+
+                    SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                    cmd.Parameters.AddWithValue("@ReturnDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@RecordID", recordId);
+
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Return date updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update failed. Record might not exist.");
+                    }
+                }
+
+                // Reload transactions for the same user
+                string userIC = dataGridViewUsers.SelectedRows[0].Cells["ICNumber"].Value.ToString();
+                LoadUserTransactions(userIC);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating return date: " + ex.Message);
+            }
+        }
     }
 }

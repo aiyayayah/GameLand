@@ -60,12 +60,13 @@
             // 
             // btnUpdateReturn
             // 
-            this.btnUpdateReturn.Location = new System.Drawing.Point(582, 819);
+            this.btnUpdateReturn.Location = new System.Drawing.Point(645, 800);
             this.btnUpdateReturn.Name = "btnUpdateReturn";
-            this.btnUpdateReturn.Size = new System.Drawing.Size(75, 10);
+            this.btnUpdateReturn.Size = new System.Drawing.Size(289, 59);
             this.btnUpdateReturn.TabIndex = 2;
             this.btnUpdateReturn.Text = "button1";
             this.btnUpdateReturn.UseVisualStyleBackColor = true;
+            this.btnUpdateReturn.Click += new System.EventHandler(this.btnUpdateReturn_Click_1);
             // 
             // AdminUserListForm
             // 
