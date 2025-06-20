@@ -3,15 +3,25 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using GameLand.GameLandWebServiceRef;
+using GameLand.Services;
 
 namespace GameLand.forms
 {
+
     public partial class AdminUserListForm : Form
     {
+
+        private GameCardService _gameCardService;
+        private GameServiceSoapClient _webServiceClient;
+
         public AdminUserListForm()
         {
             InitializeComponent();
+            _gameCardService = new GameCardService();
+            _webServiceClient = new GameServiceSoapClient("GameServiceSoap");
         }
+
 
         private void AdminUserListForm_Load_1(object sender, EventArgs e)
         {
@@ -53,18 +63,43 @@ namespace GameLand.forms
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     string query = @"
-                SELECT RecordID, ItemID, BorrowDate, ReturnDate 
-                FROM BorrowRecords  
-                WHERE UserIC = @UserIC";
+            SELECT RecordID, ItemID, BorrowDate, ReturnDate 
+            FROM BorrowRecords 
+            WHERE UserIC = @UserIC";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     da.SelectCommand.Parameters.AddWithValue("@UserIC", userIC);
 
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvUserTransactions.DataSource = dt;
 
+                    // Add penalty column
+                    dt.Columns.Add("Penalty", typeof(double));
+
+                    // Call web service to calculate penalties
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        DateTime borrowDate = Convert.ToDateTime(row["BorrowDate"]);
+                        DateTime returnDate;
+
+                        if (row["ReturnDate"] == DBNull.Value)
+                        {
+                            returnDate = DateTime.Now;
+                        }
+                        else
+                        {
+                            returnDate = Convert.ToDateTime(row["ReturnDate"]);
+                        }
+
+                        double penalty = _webServiceClient.CalculatePenalty(borrowDate, returnDate);
+
+
+                        row["Penalty"] = penalty;
+                    }
+
+                    dgvUserTransactions.DataSource = dt;
                     dgvUserTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvUserTransactions.Columns["Penalty"].DefaultCellStyle.Format = "C2";
                 }
             }
             catch (Exception ex)
@@ -72,6 +107,9 @@ namespace GameLand.forms
                 MessageBox.Show("Error loading transactions: " + ex.Message);
             }
         }
+
+
+
 
         private void btnUpdateReturn_Click(object sender, EventArgs e)
         {

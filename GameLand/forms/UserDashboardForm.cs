@@ -114,10 +114,14 @@ namespace GameLand.forms
                 // Call web service to calculate penalty
                 double penalty = _webServiceClient.CalculatePenalty(borrowDate, returnDate);
 
-                // Show penalty (even if 0)
-                MessageBox.Show($"Total penalty: RM{penalty:F2}");
+                // Check if penalty is due
+                if (penalty > 0)
+                {
+                    MessageBox.Show($"Total penalty: RM{penalty:F2}\nPlease proceed to the counter to make the payment.", "Penalty Due", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // stop here, do not return the item yet
+                }
 
-                // Then process the return
+                // No penalty, proceed with return
                 _gameCardService.ReturnItem(recordId, itemId);
 
                 MessageBox.Show("Item returned successfully!");
@@ -129,6 +133,7 @@ namespace GameLand.forms
                 MessageBox.Show("Return failed: " + ex.Message);
             }
         }
+
 
 
         private void lblWelcome_Click(object sender, EventArgs e)
