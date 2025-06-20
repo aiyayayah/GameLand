@@ -120,7 +120,6 @@ namespace GameLand.forms
                 DateTime borrowDate = Convert.ToDateTime(dgvBorrowedItems.SelectedRows[0].Cells["BorrowDate"].Value);
                 DateTime returnDate = DateTime.Now;
 
-                // Call web service to calculate penalty
                 double penalty = _webServiceClient.CalculatePenalty(borrowDate, returnDate);
 
                 // Check if penalty is due
@@ -131,7 +130,19 @@ namespace GameLand.forms
                 }
 
                 // No penalty, proceed with return
-                _gameCardService.ReturnItem(recordId, itemId);
+                string result = _webServiceClient.ReturnItem(recordId, itemId);
+
+                if (result == "Success")
+                {
+                    MessageBox.Show("Item returned successfully!");
+                    LoadAvailableItems();
+                    LoadUserBorrowedItems();
+                }
+                else
+                {
+                    MessageBox.Show("Return failed: " + result);
+                }
+
 
                 MessageBox.Show("Item returned successfully!");
                 LoadAvailableItems();

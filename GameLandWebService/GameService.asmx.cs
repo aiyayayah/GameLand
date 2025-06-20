@@ -135,7 +135,28 @@ namespace GameLandWebService
             }
         }
 
+        [WebMethod]
+        public string ReturnItem(int recordId, string itemId)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString))
+            {
+                conn.Open();
 
+                // Step 1: Update return date
+                SqlCommand updateReturn = new SqlCommand(
+                    "UPDATE BorrowRecords SET ReturnDate = GETDATE() WHERE RecordID = @recordId", conn);
+                updateReturn.Parameters.AddWithValue("@recordId", recordId);
+                updateReturn.ExecuteNonQuery();
+
+                // Step 2: Set item as available
+                SqlCommand updateItem = new SqlCommand(
+                    "UPDATE GameCards SET ItemStatus = 'Available', UserIC = NULL WHERE ItemID = @itemId", conn);
+                updateItem.Parameters.AddWithValue("@itemId", itemId);
+                updateItem.ExecuteNonQuery();
+
+                return "Success";
+            }
+        }
 
 
         [WebMethod]

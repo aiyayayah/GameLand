@@ -50,6 +50,13 @@ namespace GameLand.GameLandWebServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/BorrowItem", ReplyAction="*")]
         System.Threading.Tasks.Task<string> BorrowItemAsync(string userIC, string itemId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/ReturnItem", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string ReturnItem(int recordId, string itemId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/ReturnItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> ReturnItemAsync(int recordId, string itemId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string CheckConnectionString();
@@ -123,6 +130,14 @@ namespace GameLand.GameLandWebServiceRef {
         
         public System.Threading.Tasks.Task<string> BorrowItemAsync(string userIC, string itemId) {
             return base.Channel.BorrowItemAsync(userIC, itemId);
+        }
+        
+        public string ReturnItem(int recordId, string itemId) {
+            return base.Channel.ReturnItem(recordId, itemId);
+        }
+        
+        public System.Threading.Tasks.Task<string> ReturnItemAsync(int recordId, string itemId) {
+            return base.Channel.ReturnItemAsync(recordId, itemId);
         }
         
         public string CheckConnectionString() {

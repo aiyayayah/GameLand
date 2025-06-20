@@ -78,6 +78,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ReturnItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recordId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CheckConnectionString">
         <s:complexType />
       </s:element>
@@ -122,6 +137,12 @@
   <wsdl:message name="BorrowItemSoapOut">
     <wsdl:part name="parameters" element="tns:BorrowItemResponse" />
   </wsdl:message>
+  <wsdl:message name="ReturnItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnItem" />
+  </wsdl:message>
+  <wsdl:message name="ReturnItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnItemResponse" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringSoapIn">
     <wsdl:part name="parameters" element="tns:CheckConnectionString" />
   </wsdl:message>
@@ -164,6 +185,13 @@
   <wsdl:message name="BorrowItemHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
+  <wsdl:message name="ReturnItemHttpGetIn">
+    <wsdl:part name="recordId" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReturnItemHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpGetIn" />
   <wsdl:message name="CheckConnectionStringHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -204,6 +232,13 @@
   <wsdl:message name="BorrowItemHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
+  <wsdl:message name="ReturnItemHttpPostIn">
+    <wsdl:part name="recordId" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReturnItemHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpPostIn" />
   <wsdl:message name="CheckConnectionStringHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -228,6 +263,10 @@
     <wsdl:operation name="BorrowItem">
       <wsdl:input message="tns:BorrowItemSoapIn" />
       <wsdl:output message="tns:BorrowItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <wsdl:input message="tns:ReturnItemSoapIn" />
+      <wsdl:output message="tns:ReturnItemSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringSoapIn" />
@@ -255,6 +294,10 @@
       <wsdl:input message="tns:BorrowItemHttpGetIn" />
       <wsdl:output message="tns:BorrowItemHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <wsdl:input message="tns:ReturnItemHttpGetIn" />
+      <wsdl:output message="tns:ReturnItemHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpGetIn" />
       <wsdl:output message="tns:CheckConnectionStringHttpGetOut" />
@@ -280,6 +323,10 @@
     <wsdl:operation name="BorrowItem">
       <wsdl:input message="tns:BorrowItemHttpPostIn" />
       <wsdl:output message="tns:BorrowItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <wsdl:input message="tns:ReturnItemHttpPostIn" />
+      <wsdl:output message="tns:ReturnItemHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpPostIn" />
@@ -326,6 +373,15 @@
     </wsdl:operation>
     <wsdl:operation name="BorrowItem">
       <soap:operation soapAction="http://gameland.com/BorrowItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <soap:operation soapAction="http://gameland.com/ReturnItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -390,6 +446,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <soap12:operation soapAction="http://gameland.com/ReturnItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <soap12:operation soapAction="http://gameland.com/CheckConnectionString" style="document" />
       <wsdl:input>
@@ -447,6 +512,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <http:operation location="/ReturnItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <http:operation location="/CheckConnectionString" />
       <wsdl:input>
@@ -497,6 +571,15 @@
     </wsdl:operation>
     <wsdl:operation name="BorrowItem">
       <http:operation location="/BorrowItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnItem">
+      <http:operation location="/ReturnItem" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
