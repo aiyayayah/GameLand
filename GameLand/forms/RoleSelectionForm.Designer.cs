@@ -38,7 +38,7 @@
             // 
             this.btnUser.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnUser.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.Location = new System.Drawing.Point(443, 400);
+            this.btnUser.Location = new System.Drawing.Point(579, 433);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(206, 87);
             this.btnUser.TabIndex = 0;
@@ -49,7 +49,7 @@
             // btnAdmin
             // 
             this.btnAdmin.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(682, 400);
+            this.btnAdmin.Location = new System.Drawing.Point(818, 433);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(206, 87);
             this.btnAdmin.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cambria", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.Control;
-            this.title.Location = new System.Drawing.Point(374, 255);
+            this.title.Location = new System.Drawing.Point(510, 288);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(591, 65);
             this.title.TabIndex = 20;
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1370, 782);
+            this.ClientSize = new System.Drawing.Size(1495, 852);
             this.Controls.Add(this.title);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnUser);

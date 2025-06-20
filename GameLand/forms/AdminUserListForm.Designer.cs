@@ -43,7 +43,7 @@
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 62;
             this.dataGridViewUsers.RowTemplate.Height = 28;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1323, 521);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1406, 473);
             this.dataGridViewUsers.TabIndex = 0;
             this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellClick);
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
@@ -51,16 +51,17 @@
             // dgvUserTransactions
             // 
             this.dgvUserTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserTransactions.Location = new System.Drawing.Point(49, 602);
+            this.dgvUserTransactions.Location = new System.Drawing.Point(49, 565);
             this.dgvUserTransactions.Name = "dgvUserTransactions";
             this.dgvUserTransactions.RowHeadersWidth = 62;
             this.dgvUserTransactions.RowTemplate.Height = 28;
-            this.dgvUserTransactions.Size = new System.Drawing.Size(1323, 171);
+            this.dgvUserTransactions.Size = new System.Drawing.Size(1406, 176);
             this.dgvUserTransactions.TabIndex = 1;
+            this.dgvUserTransactions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserTransactions_CellContentClick);
             // 
             // btnUpdateReturn
             // 
-            this.btnUpdateReturn.Location = new System.Drawing.Point(645, 800);
+            this.btnUpdateReturn.Location = new System.Drawing.Point(618, 781);
             this.btnUpdateReturn.Name = "btnUpdateReturn";
             this.btnUpdateReturn.Size = new System.Drawing.Size(289, 59);
             this.btnUpdateReturn.TabIndex = 2;
@@ -72,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1406, 938);
+            this.ClientSize = new System.Drawing.Size(1495, 852);
             this.Controls.Add(this.btnUpdateReturn);
             this.Controls.Add(this.dgvUserTransactions);
             this.Controls.Add(this.dataGridViewUsers);

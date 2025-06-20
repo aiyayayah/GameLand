@@ -39,7 +39,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(676, 480);
+            this.btnLogin.Location = new System.Drawing.Point(746, 521);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 39);
             this.btnLogin.TabIndex = 18;
@@ -49,7 +49,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(621, 403);
+            this.textBoxPassword.Location = new System.Drawing.Point(691, 444);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(284, 26);
             this.textBoxPassword.TabIndex = 16;
@@ -62,7 +62,7 @@
             this.labelPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.labelPass.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPass.ForeColor = System.Drawing.Color.OldLace;
-            this.labelPass.Location = new System.Drawing.Point(408, 403);
+            this.labelPass.Location = new System.Drawing.Point(478, 444);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(160, 37);
             this.labelPass.TabIndex = 15;
@@ -70,7 +70,7 @@
             // 
             // textBoxIC
             // 
-            this.textBoxIC.Location = new System.Drawing.Point(621, 334);
+            this.textBoxIC.Location = new System.Drawing.Point(691, 375);
             this.textBoxIC.Name = "textBoxIC";
             this.textBoxIC.Size = new System.Drawing.Size(284, 26);
             this.textBoxIC.TabIndex = 14;
@@ -82,7 +82,7 @@
             this.labelIC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.labelIC.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIC.ForeColor = System.Drawing.Color.OldLace;
-            this.labelIC.Location = new System.Drawing.Point(408, 334);
+            this.labelIC.Location = new System.Drawing.Point(478, 375);
             this.labelIC.Name = "labelIC";
             this.labelIC.Size = new System.Drawing.Size(170, 37);
             this.labelIC.TabIndex = 13;
@@ -94,7 +94,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cambria", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.Control;
-            this.title.Location = new System.Drawing.Point(305, 208);
+            this.title.Location = new System.Drawing.Point(375, 249);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(749, 65);
             this.title.TabIndex = 19;
@@ -107,7 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 782);
+            this.ClientSize = new System.Drawing.Size(1495, 852);
             this.Controls.Add(this.title);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBoxPassword);

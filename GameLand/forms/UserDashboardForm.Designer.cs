@@ -33,7 +33,6 @@
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.dgvBorrowedItems = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedItems)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +41,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(585, 30);
+            this.lblWelcome.Location = new System.Drawing.Point(731, 43);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(103, 37);
             this.lblWelcome.TabIndex = 0;
@@ -57,13 +56,13 @@
             this.dgvAvailableItems.Name = "dgvAvailableItems";
             this.dgvAvailableItems.RowHeadersWidth = 62;
             this.dgvAvailableItems.RowTemplate.Height = 28;
-            this.dgvAvailableItems.Size = new System.Drawing.Size(1107, 356);
+            this.dgvAvailableItems.Size = new System.Drawing.Size(1328, 318);
             this.dgvAvailableItems.TabIndex = 1;
             this.dgvAvailableItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(579, 494);
+            this.btnBorrow.Location = new System.Drawing.Point(738, 487);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(133, 51);
             this.btnBorrow.TabIndex = 2;
@@ -73,7 +72,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(579, 748);
+            this.btnReturn.Location = new System.Drawing.Point(738, 755);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(133, 51);
             this.btnReturn.TabIndex = 3;
@@ -89,24 +88,15 @@
             this.dgvBorrowedItems.Name = "dgvBorrowedItems";
             this.dgvBorrowedItems.RowHeadersWidth = 62;
             this.dgvBorrowedItems.RowTemplate.Height = 28;
-            this.dgvBorrowedItems.Size = new System.Drawing.Size(1107, 156);
+            this.dgvBorrowedItems.Size = new System.Drawing.Size(1328, 157);
             this.dgvBorrowedItems.TabIndex = 4;
             this.dgvBorrowedItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowedItems_CellContentClick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(434, 758);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 26);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // UserDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 829);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1495, 852);
             this.Controls.Add(this.dgvBorrowedItems);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
@@ -129,6 +119,5 @@
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.DataGridView dgvBorrowedItems;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

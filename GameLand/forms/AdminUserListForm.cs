@@ -38,6 +38,12 @@ namespace GameLand.forms
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dataGridViewUsers.DataSource = dt;
+                    dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+
+                if (dataGridViewUsers.Columns.Contains("Password"))
+                {
+                    dataGridViewUsers.Columns["Password"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -210,6 +216,11 @@ namespace GameLand.forms
             {
                 MessageBox.Show("Error updating return date: " + ex.Message);
             }
+        }
+
+        private void dgvUserTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
