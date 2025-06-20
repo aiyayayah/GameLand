@@ -30,29 +30,56 @@
         {
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dgvUserTransactions = new System.Windows.Forms.DataGridView();
+            this.btnUpdateReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserTransactions)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewUsers
             // 
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(37, 49);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(49, 39);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 62;
             this.dataGridViewUsers.RowTemplate.Height = 28;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1323, 768);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1323, 521);
             this.dataGridViewUsers.TabIndex = 0;
+            this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellClick);
+            this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
+            // 
+            // dgvUserTransactions
+            // 
+            this.dgvUserTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserTransactions.Location = new System.Drawing.Point(49, 602);
+            this.dgvUserTransactions.Name = "dgvUserTransactions";
+            this.dgvUserTransactions.RowHeadersWidth = 62;
+            this.dgvUserTransactions.RowTemplate.Height = 28;
+            this.dgvUserTransactions.Size = new System.Drawing.Size(1323, 171);
+            this.dgvUserTransactions.TabIndex = 1;
+            // 
+            // btnUpdateReturn
+            // 
+            this.btnUpdateReturn.Location = new System.Drawing.Point(582, 819);
+            this.btnUpdateReturn.Name = "btnUpdateReturn";
+            this.btnUpdateReturn.Size = new System.Drawing.Size(75, 10);
+            this.btnUpdateReturn.TabIndex = 2;
+            this.btnUpdateReturn.Text = "button1";
+            this.btnUpdateReturn.UseVisualStyleBackColor = true;
             // 
             // AdminUserListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 938);
+            this.Controls.Add(this.btnUpdateReturn);
+            this.Controls.Add(this.dgvUserTransactions);
             this.Controls.Add(this.dataGridViewUsers);
             this.Name = "AdminUserListForm";
             this.Text = "AdminUserListForm";
             this.Load += new System.EventHandler(this.AdminUserListForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserTransactions)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,5 +88,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewUsers;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridView dgvUserTransactions;
+        private System.Windows.Forms.Button btnUpdateReturn;
     }
 }

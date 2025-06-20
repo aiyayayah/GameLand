@@ -88,13 +88,19 @@ namespace GameLandWebService
             TimeSpan duration = returnDate.Date - borrowDate.Date;
             int totalDays = duration.Days;
 
-            if (totalDays <= 1) //1day
+            if (totalDays <= 1) // within 1 day
             {
                 return 0.0;
             }
 
             int overdueDays = totalDays - 7;
-            return overdueDays * 5.0; // RM5 per day
+
+            if (overdueDays > 0)
+            {
+                return overdueDays * 5.0; // RM5 per day
+            }
+
+            return 0.0;
         }
 
 

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using GameLand.Services;
-using GameLand.GameLandWebServiceRef; // Namespace from your added Web Service Reference
+using GameLand.GameLandWebServiceRef;
 
 namespace GameLand.forms
 {
