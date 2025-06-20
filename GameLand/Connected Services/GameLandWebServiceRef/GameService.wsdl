@@ -63,6 +63,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="BorrowItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userIC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrowItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BorrowItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CheckConnectionString">
         <s:complexType />
       </s:element>
@@ -101,6 +116,12 @@
   <wsdl:message name="CalculatePenaltySoapOut">
     <wsdl:part name="parameters" element="tns:CalculatePenaltyResponse" />
   </wsdl:message>
+  <wsdl:message name="BorrowItemSoapIn">
+    <wsdl:part name="parameters" element="tns:BorrowItem" />
+  </wsdl:message>
+  <wsdl:message name="BorrowItemSoapOut">
+    <wsdl:part name="parameters" element="tns:BorrowItemResponse" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringSoapIn">
     <wsdl:part name="parameters" element="tns:CheckConnectionString" />
   </wsdl:message>
@@ -136,6 +157,13 @@
   <wsdl:message name="CalculatePenaltyHttpGetOut">
     <wsdl:part name="Body" element="tns:double" />
   </wsdl:message>
+  <wsdl:message name="BorrowItemHttpGetIn">
+    <wsdl:part name="userIC" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrowItemHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpGetIn" />
   <wsdl:message name="CheckConnectionStringHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -169,6 +197,13 @@
   <wsdl:message name="CalculatePenaltyHttpPostOut">
     <wsdl:part name="Body" element="tns:double" />
   </wsdl:message>
+  <wsdl:message name="BorrowItemHttpPostIn">
+    <wsdl:part name="userIC" type="s:string" />
+    <wsdl:part name="itemId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrowItemHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:message name="CheckConnectionStringHttpPostIn" />
   <wsdl:message name="CheckConnectionStringHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -189,6 +224,10 @@
     <wsdl:operation name="CalculatePenalty">
       <wsdl:input message="tns:CalculatePenaltySoapIn" />
       <wsdl:output message="tns:CalculatePenaltySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <wsdl:input message="tns:BorrowItemSoapIn" />
+      <wsdl:output message="tns:BorrowItemSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringSoapIn" />
@@ -212,6 +251,10 @@
       <wsdl:input message="tns:CalculatePenaltyHttpGetIn" />
       <wsdl:output message="tns:CalculatePenaltyHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <wsdl:input message="tns:BorrowItemHttpGetIn" />
+      <wsdl:output message="tns:BorrowItemHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpGetIn" />
       <wsdl:output message="tns:CheckConnectionStringHttpGetOut" />
@@ -233,6 +276,10 @@
     <wsdl:operation name="CalculatePenalty">
       <wsdl:input message="tns:CalculatePenaltyHttpPostIn" />
       <wsdl:output message="tns:CalculatePenaltyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <wsdl:input message="tns:BorrowItemHttpPostIn" />
+      <wsdl:output message="tns:BorrowItemHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <wsdl:input message="tns:CheckConnectionStringHttpPostIn" />
@@ -270,6 +317,15 @@
     </wsdl:operation>
     <wsdl:operation name="CalculatePenalty">
       <soap:operation soapAction="http://gameland.com/CalculatePenalty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <soap:operation soapAction="http://gameland.com/BorrowItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -325,6 +381,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <soap12:operation soapAction="http://gameland.com/BorrowItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <soap12:operation soapAction="http://gameland.com/CheckConnectionString" style="document" />
       <wsdl:input>
@@ -373,6 +438,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <http:operation location="/BorrowItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckConnectionString">
       <http:operation location="/CheckConnectionString" />
       <wsdl:input>
@@ -414,6 +488,15 @@
     </wsdl:operation>
     <wsdl:operation name="CalculatePenalty">
       <http:operation location="/CalculatePenalty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrowItem">
+      <http:operation location="/BorrowItem" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

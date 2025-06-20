@@ -43,6 +43,13 @@ namespace GameLand.GameLandWebServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CalculatePenalty", ReplyAction="*")]
         System.Threading.Tasks.Task<double> CalculatePenaltyAsync(System.DateTime borrowDate, System.DateTime returnDate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/BorrowItem", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string BorrowItem(string userIC, string itemId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/BorrowItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> BorrowItemAsync(string userIC, string itemId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string CheckConnectionString();
@@ -108,6 +115,14 @@ namespace GameLand.GameLandWebServiceRef {
         
         public System.Threading.Tasks.Task<double> CalculatePenaltyAsync(System.DateTime borrowDate, System.DateTime returnDate) {
             return base.Channel.CalculatePenaltyAsync(borrowDate, returnDate);
+        }
+        
+        public string BorrowItem(string userIC, string itemId) {
+            return base.Channel.BorrowItem(userIC, itemId);
+        }
+        
+        public System.Threading.Tasks.Task<string> BorrowItemAsync(string userIC, string itemId) {
+            return base.Channel.BorrowItemAsync(userIC, itemId);
         }
         
         public string CheckConnectionString() {

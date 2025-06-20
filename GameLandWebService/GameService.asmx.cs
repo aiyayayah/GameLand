@@ -103,6 +103,39 @@ namespace GameLandWebService
             return 0.0;
         }
 
+        [WebMethod]
+        public string BorrowItem(string userIC, string itemId)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString))
+            {
+                conn.Open();
+
+                SqlCommand checkCmd = new SqlCommand("SELECT ItemStatus FROM GameCards WHERE ItemID = @itemId", conn);
+                checkCmd.Parameters.AddWithValue("@itemId", itemId);
+                string status = (string)checkCmd.ExecuteScalar();
+
+                if (status != "Available")
+                {
+                    return "Item is not available.";
+                }
+
+                SqlCommand borrowCmd = new SqlCommand(
+                    "INSERT INTO BorrowRecords (UserIC, ItemID, BorrowDate) VALUES (@ic, @itemId, GETDATE())", conn);
+                borrowCmd.Parameters.AddWithValue("@ic", userIC);
+                borrowCmd.Parameters.AddWithValue("@itemId", itemId);
+                borrowCmd.ExecuteNonQuery();
+
+                SqlCommand updateCmd = new SqlCommand(
+                    "UPDATE GameCards SET ItemStatus = 'Not Available', UserIC = @ic WHERE ItemID = @itemId", conn);
+                updateCmd.Parameters.AddWithValue("@ic", userIC);
+                updateCmd.Parameters.AddWithValue("@itemId", itemId);
+                updateCmd.ExecuteNonQuery();
+
+                return "Success";
+            }
+        }
+
+
 
 
         [WebMethod]

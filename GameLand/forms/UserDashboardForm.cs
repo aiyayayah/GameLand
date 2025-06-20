@@ -84,16 +84,25 @@ namespace GameLand.forms
 
             try
             {
-                _gameCardService.BorrowItem(userIC, itemId);
-                MessageBox.Show("Item borrowed successfully!");
-                LoadAvailableItems();
-                LoadUserBorrowedItems();
+                string result = _webServiceClient.BorrowItem(userIC, itemId);
+
+                if (result == "Success")
+                {
+                    MessageBox.Show("Item borrowed successfully!");
+                    LoadAvailableItems();
+                    LoadUserBorrowedItems();
+                }
+                else
+                {
+                    MessageBox.Show(result); // Will show if item is not available
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Borrow failed: " + ex.Message);
             }
         }
+
 
         private void btnReturn_Click_1(object sender, EventArgs e)
         {
