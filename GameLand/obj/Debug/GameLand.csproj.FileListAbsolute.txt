@@ -1,6 +1,11 @@
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.exe
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.exe.config
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\System.Configuration.ConfigurationManager.xml
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.csproj.AssemblyReference.cache
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.AdminLoginForm.resources
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.forms.AdminUserListForm.resources
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.forms.btnEdit.resources
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.forms.EditUserInfo.resources
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.LoginForm.resources
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.forms.UserDashboardForm.resources
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.Properties.Resources.resources
@@ -8,12 +13,7 @@ D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Deb
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.RegisterForm.resources
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.csproj.GenerateResource.cache
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.csproj.CoreCompileInputs.cache
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.exe.config
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.exe
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.pdb
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\System.Configuration.ConfigurationManager.dll
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\System.Configuration.ConfigurationManager.xml
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.csproj.Up2Date
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.exe
 D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.pdb
-D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\obj\Debug\GameLand.forms.ManageUsersForm.resources
+D:\Cky's Uni Folder\Enterprise Application Integration\GameLand\GameLand\bin\Debug\GameLand.pdb

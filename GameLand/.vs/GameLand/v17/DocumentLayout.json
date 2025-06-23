@@ -3,79 +3,123 @@
   "WorkspaceRootPath": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|c:\\users\\cky\\downloads\\temp\\edituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|c:\\users\\cky\\downloads\\temp\\edituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\manageusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\manageusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\manageusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\manageusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 108,
+      "VerticalTabListWidth": 270,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AdminUserListForm.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminUserListForm.cs",
               "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
               "RelativeToolTip": "forms\\AdminUserListForm.cs",
-              "ViewState": "AgIAAPMAAAAAAAAAAAAAwAUBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMBAAAAAAAAAAAAwCUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:58:38.288Z",
+              "WhenOpened": "2025-06-23T11:39:08.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AdminUserListForm.cs [Design]",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminUserListForm.cs",
               "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs [Design]",
               "RelativeToolTip": "forms\\AdminUserListForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:55:20.597Z",
+              "WhenOpened": "2025-06-23T11:39:07.164Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManageUsersForm.cs",
-              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\ManageUsersForm.cs",
-              "RelativeDocumentMoniker": "forms\\ManageUsersForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\ManageUsersForm.cs",
-              "RelativeToolTip": "forms\\ManageUsersForm.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvxYAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AdminLoginForm.cs",
+              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs",
+              "RelativeDocumentMoniker": "forms\\AdminLoginForm.cs",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs",
+              "RelativeToolTip": "forms\\AdminLoginForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T10:52:39.113Z",
+              "WhenOpened": "2025-06-23T11:39:04.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ManageUsersForm.cs [Design]",
-              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\ManageUsersForm.cs",
-              "RelativeDocumentMoniker": "forms\\ManageUsersForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\ManageUsersForm.cs [Design]",
-              "RelativeToolTip": "forms\\ManageUsersForm.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "AdminLoginForm.cs [Design]",
+              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs",
+              "RelativeDocumentMoniker": "forms\\AdminLoginForm.cs",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs [Design]",
+              "RelativeToolTip": "forms\\AdminLoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T10:50:53.361Z",
+              "WhenOpened": "2025-06-23T11:39:02.745Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminUserListForm.Designer.cs",
+              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.Designer.cs",
+              "RelativeDocumentMoniker": "forms\\AdminUserListForm.Designer.cs",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.Designer.cs",
+              "RelativeToolTip": "forms\\AdminUserListForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T11:38:00.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditUserInfo.cs",
+              "DocumentMoniker": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
+              "ToolTip": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T11:22:57.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditUserInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
+              "ToolTip": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T11:18:53.345Z",
               "EditorCaption": " [Design]"
             }
           ]

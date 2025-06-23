@@ -1,6 +1,6 @@
 ﻿namespace GameLand.forms
 {
-    partial class AdminUserListForm
+    partial class btnEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.dgvUserTransactions = new System.Windows.Forms.DataGridView();
             this.btnUpdateReturn = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserTransactions)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 62;
             this.dataGridViewUsers.RowTemplate.Height = 28;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1715, 520);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1617, 406);
             this.dataGridViewUsers.TabIndex = 0;
             this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellClick);
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
@@ -53,17 +53,17 @@
             // dgvUserTransactions
             // 
             this.dgvUserTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserTransactions.Location = new System.Drawing.Point(49, 662);
+            this.dgvUserTransactions.Location = new System.Drawing.Point(65, 535);
             this.dgvUserTransactions.Name = "dgvUserTransactions";
             this.dgvUserTransactions.RowHeadersWidth = 62;
             this.dgvUserTransactions.RowTemplate.Height = 28;
-            this.dgvUserTransactions.Size = new System.Drawing.Size(1715, 189);
+            this.dgvUserTransactions.Size = new System.Drawing.Size(1577, 110);
             this.dgvUserTransactions.TabIndex = 1;
             this.dgvUserTransactions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserTransactions_CellContentClick);
             // 
             // btnUpdateReturn
             // 
-            this.btnUpdateReturn.Location = new System.Drawing.Point(333, 894);
+            this.btnUpdateReturn.Location = new System.Drawing.Point(548, 701);
             this.btnUpdateReturn.Name = "btnUpdateReturn";
             this.btnUpdateReturn.Size = new System.Drawing.Size(208, 59);
             this.btnUpdateReturn.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(690, 894);
+            this.btnDeleteUser.Location = new System.Drawing.Point(810, 701);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(208, 59);
             this.btnDeleteUser.TabIndex = 3;
@@ -81,27 +81,28 @@
             this.btnDeleteUser.UseVisualStyleBackColor = true;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // button1
+            // btnEditUser
             // 
-            this.button1.Location = new System.Drawing.Point(978, 894);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 59);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Delete User";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditUser.Location = new System.Drawing.Point(1078, 710);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(208, 59);
+            this.btnEditUser.TabIndex = 4;
+            this.btnEditUser.Text = "Edit User";
+            this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click_1);
             // 
-            // AdminUserListForm
+            // btnEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1797, 996);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1830, 909);
+            this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnUpdateReturn);
             this.Controls.Add(this.dgvUserTransactions);
             this.Controls.Add(this.dataGridViewUsers);
-            this.Name = "AdminUserListForm";
-            this.Text = "AdminUserListForm";
+            this.Name = "btnEdit";
+            this.Text = "EditUser";
             this.Load += new System.EventHandler(this.AdminUserListForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserTransactions)).EndInit();
@@ -116,6 +117,6 @@
         private System.Windows.Forms.DataGridView dgvUserTransactions;
         private System.Windows.Forms.Button btnUpdateReturn;
         private System.Windows.Forms.Button btnDeleteUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditUser;
     }
 }

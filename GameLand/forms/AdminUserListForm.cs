@@ -9,13 +9,13 @@ using GameLand.Services;
 namespace GameLand.forms
 {
 
-    public partial class AdminUserListForm : Form
+    public partial class btnEdit : Form
     {
 
         private GameCardService _gameCardService;
         private GameServiceSoapClient _webServiceClient;
 
-        public AdminUserListForm()
+        public btnEdit()
         {
             InitializeComponent();
             _gameCardService = new GameCardService();
@@ -32,7 +32,7 @@ namespace GameLand.forms
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     string query = "SELECT * FROM Users";
-                 
+
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
@@ -53,7 +53,7 @@ namespace GameLand.forms
         }
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; 
+            if (e.RowIndex < 0) return;
 
             string userIC = dataGridViewUsers.Rows[e.RowIndex].Cells["ICNumber"].Value.ToString();
             LoadUserTransactions(userIC);
@@ -227,7 +227,7 @@ namespace GameLand.forms
             string name = dataGridViewUsers.SelectedRows[0].Cells["Name"].Value.ToString();
 
             // Confirmation prompt
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{name}' (IC: {ic})?",
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{name}'?",
                                                   "Confirm Deletion",
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning);
@@ -270,6 +270,27 @@ namespace GameLand.forms
         }
 
 
+        private void btnEditUser_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridViewUsers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user to edit.");
+                return;
+            }
+
+            DataGridViewRow selectedRow = dataGridViewUsers.SelectedRows[0];
+
+            string name = selectedRow.Cells["Name"].Value?.ToString();
+            string ic = selectedRow.Cells["ICNumber"].Value?.ToString();
+            string email = selectedRow.Cells["Email"].Value?.ToString();
+            string phone = selectedRow.Cells["Phone"].Value?.ToString();
+
+            var editForm = new EditUserInfo(name, ic, email, phone);
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                AdminUserListForm_Load_1(null, null); // Refresh user list after editing
+            }
+        }
 
     }
 }

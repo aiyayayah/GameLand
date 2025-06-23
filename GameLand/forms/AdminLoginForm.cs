@@ -43,7 +43,7 @@ namespace GameLand
                 if (result == "Success")
                 {
                     MessageBox.Show("Login successful! Welcome Admin.");
-                    AdminUserListForm form = new AdminUserListForm();
+                    btnEdit form = new btnEdit();
                     form.Show();
                     this.Hide();
                 }
