@@ -219,46 +219,57 @@ namespace GameLand.forms
         {
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a user to delete.");
+                MessageBox.Show("Please select a user.");
                 return;
             }
 
-            string userIC = dataGridViewUsers.SelectedRows[0].Cells["ICNumber"].Value.ToString();
+            string ic = dataGridViewUsers.SelectedRows[0].Cells["ICNumber"].Value.ToString();
+            string name = dataGridViewUsers.SelectedRows[0].Cells["Name"].Value.ToString();
 
-            string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connStr))
+            // Confirmation prompt
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{name}' (IC: {ic})?",
+                                                  "Confirm Deletion",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            try
             {
-                conn.Open();
-
-                // Check for active borrowings
-                SqlCommand checkCmd = new SqlCommand(
-                    "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL", conn);
-                checkCmd.Parameters.AddWithValue("@ic", userIC);
-
-                int activeBorrowings = (int)checkCmd.ExecuteScalar();
-
-                if (activeBorrowings > 0)
+                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    MessageBox.Show("Cannot delete user. They have active borrowings.");
-                    return;
+                    conn.Open();
+
+                    // Check for active borrowings
+                    string checkQuery = "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@ic", ic);
+                    int active = (int)checkCmd.ExecuteScalar();
+
+                    if (active > 0)
+                    {
+                        MessageBox.Show("This user has active borrowings and cannot be deleted!");
+                        return;
+                    }
+
+                    string deleteQuery = "DELETE FROM Users WHERE ICNumber = @ic";
+                    SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn);
+                    deleteCmd.Parameters.AddWithValue("@ic", ic);
+                    deleteCmd.ExecuteNonQuery();
                 }
 
-                // Delete user
-                SqlCommand deleteCmd = new SqlCommand("DELETE FROM Users WHERE ICNumber = @ic", conn);
-                deleteCmd.Parameters.AddWithValue("@ic", userIC);
-
-                int rowsAffected = deleteCmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("User deleted successfully.");
-                    AdminUserListForm_Load_1(null, null); // Reload user list
-                }
-                else
-                {
-                    MessageBox.Show("Failed to delete user.");
-                }
+                MessageBox.Show("User deleted successfully.");
+                AdminUserListForm_Load_1(null, null); // Refresh user list
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting user: " + ex.Message);
             }
         }
+
+
 
     }
 }
