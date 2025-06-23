@@ -48,14 +48,16 @@ namespace GameLand
 
                 if (result.Contains("Registration successful"))
                 {
+                    MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show(result);
+                    MessageBox.Show(result, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
             catch (Exception ex)
             {

@@ -69,5 +69,10 @@ namespace GameLand
                 MessageBox.Show("Login failed due to a service error:\n" + ex.Message);
             }
         }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

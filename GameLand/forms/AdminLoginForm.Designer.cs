@@ -38,8 +38,8 @@
             // 
             // textBoxStaffID
             // 
-            this.textBoxStaffID.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStaffID.Location = new System.Drawing.Point(645, 340);
+            this.textBoxStaffID.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStaffID.Location = new System.Drawing.Point(641, 345);
             this.textBoxStaffID.Name = "textBoxStaffID";
             this.textBoxStaffID.Size = new System.Drawing.Size(366, 45);
             this.textBoxStaffID.TabIndex = 0;
@@ -47,8 +47,8 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(645, 435);
+            this.textBoxPassword.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(641, 440);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(366, 45);
             this.textBoxPassword.TabIndex = 1;
@@ -58,7 +58,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(702, 555);
+            this.button1.Location = new System.Drawing.Point(698, 560);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 78);
             this.button1.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(482, 340);
+            this.label1.Location = new System.Drawing.Point(478, 345);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 37);
             this.label1.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(449, 443);
+            this.label2.Location = new System.Drawing.Point(445, 448);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 37);
             this.label2.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(445, 173);
+            this.label3.Location = new System.Drawing.Point(441, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(657, 62);
             this.label3.TabIndex = 5;
@@ -109,7 +109,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxStaffID);
             this.Name = "AdminLoginForm";
-            this.Text = "Form1";
+            this.Text = "Admin Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

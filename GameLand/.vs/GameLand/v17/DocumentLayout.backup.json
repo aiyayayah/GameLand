@@ -3,49 +3,57 @@
   "WorkspaceRootPath": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|c:\\users\\cky\\downloads\\temp\\edituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|c:\\users\\cky\\downloads\\temp\\edituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|c:\\users\\cky\\downloads\\temp\\edituserinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|d:\\cky\u0027s uni folder\\enterprise application integration\\gameland\\gameland\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\roleselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\roleselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\registerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminuserlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2F3804E-978F-4A91-8AF7-37D733214376}|GameLand.csproj|solutionrelative:forms\\adminloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -56,24 +64,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
+              "Title": "UserDashboardForm.cs [Design]",
+              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\UserDashboardForm.cs",
+              "RelativeDocumentMoniker": "forms\\UserDashboardForm.cs",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\UserDashboardForm.cs [Design]",
+              "RelativeToolTip": "forms\\UserDashboardForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T12:41:39.003Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoleSelectionForm.cs [Design]",
+              "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RoleSelectionForm.cs",
+              "RelativeDocumentMoniker": "forms\\RoleSelectionForm.cs",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RoleSelectionForm.cs [Design]",
+              "RelativeToolTip": "forms\\RoleSelectionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T12:39:35.771Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "forms\\LoginForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs*",
-              "RelativeToolTip": "forms\\LoginForm.cs*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCoAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs",
+              "RelativeToolTip": "forms\\LoginForm.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAawCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T12:34:22.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "RegisterForm.Designer.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RegisterForm.Designer.cs",
               "RelativeDocumentMoniker": "forms\\RegisterForm.Designer.cs",
@@ -86,32 +118,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "forms\\LoginForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs [Design]*",
-              "RelativeToolTip": "forms\\LoginForm.cs [Design]*",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "forms\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T12:33:38.522Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "RegisterForm.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RegisterForm.cs",
               "RelativeDocumentMoniker": "forms\\RegisterForm.cs",
               "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RegisterForm.cs",
               "RelativeToolTip": "forms\\RegisterForm.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAApwG8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T12:31:33.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "RegisterForm.cs [Design]",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\RegisterForm.cs",
               "RelativeDocumentMoniker": "forms\\RegisterForm.cs",
@@ -123,32 +155,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "AdminUserListForm.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminUserListForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
-              "RelativeToolTip": "forms\\AdminUserListForm.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAAwP0AAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs*",
+              "RelativeToolTip": "forms\\AdminUserListForm.cs*",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAlwNQAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T11:39:08.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "AdminUserListForm.cs [Design]",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminUserListForm.cs",
-              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs [Design]",
-              "RelativeToolTip": "forms\\AdminUserListForm.cs [Design]",
+              "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.cs [Design]*",
+              "RelativeToolTip": "forms\\AdminUserListForm.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T11:39:07.164Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AdminLoginForm.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminLoginForm.cs",
@@ -161,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "AdminLoginForm.cs [Design]",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminLoginForm.cs",
               "RelativeDocumentMoniker": "forms\\AdminLoginForm.cs",
@@ -173,31 +205,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "AdminUserListForm.Designer.cs",
               "DocumentMoniker": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.Designer.cs",
               "RelativeDocumentMoniker": "forms\\AdminUserListForm.Designer.cs",
               "ToolTip": "D:\\Cky\u0027s Uni Folder\\Enterprise Application Integration\\GameLand\\GameLand\\forms\\AdminUserListForm.Designer.cs",
               "RelativeToolTip": "forms\\AdminUserListForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T11:38:00.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T11:38:00.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "EditUserInfo.cs",
               "DocumentMoniker": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
               "ToolTip": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAwDUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAApwDsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-23T11:22:57.648Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "EditUserInfo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs",
               "ToolTip": "C:\\Users\\cky\\Downloads\\Temp\\EditUserInfo.cs [Design]",
