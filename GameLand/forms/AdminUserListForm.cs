@@ -125,7 +125,7 @@ namespace GameLand.forms
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     string updateQuery = @"
-                UPDATE Transactions 
+                UPDATE BorrowRecords  
                 SET ReturnDate = @ReturnDate 
                 WHERE RecordID = @RecordID";
 
@@ -214,5 +214,51 @@ namespace GameLand.forms
         {
 
         }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewUsers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user to delete.");
+                return;
+            }
+
+            string userIC = dataGridViewUsers.SelectedRows[0].Cells["ICNumber"].Value.ToString();
+
+            string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+
+                // Check for active borrowings
+                SqlCommand checkCmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL", conn);
+                checkCmd.Parameters.AddWithValue("@ic", userIC);
+
+                int activeBorrowings = (int)checkCmd.ExecuteScalar();
+
+                if (activeBorrowings > 0)
+                {
+                    MessageBox.Show("Cannot delete user. They have active borrowings.");
+                    return;
+                }
+
+                // Delete user
+                SqlCommand deleteCmd = new SqlCommand("DELETE FROM Users WHERE ICNumber = @ic", conn);
+                deleteCmd.Parameters.AddWithValue("@ic", userIC);
+
+                int rowsAffected = deleteCmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("User deleted successfully.");
+                    AdminUserListForm_Load_1(null, null); // Reload user list
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete user.");
+                }
+            }
+        }
+
     }
 }

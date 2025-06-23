@@ -8,6 +8,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="ic" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -153,6 +155,8 @@
     <wsdl:part name="name" type="s:string" />
     <wsdl:part name="ic" type="s:string" />
     <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
   </wsdl:message>
   <wsdl:message name="RegisterUserHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
@@ -200,6 +204,8 @@
     <wsdl:part name="name" type="s:string" />
     <wsdl:part name="ic" type="s:string" />
     <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
   </wsdl:message>
   <wsdl:message name="RegisterUserHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />

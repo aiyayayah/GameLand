@@ -82,7 +82,7 @@
             this.Controls.Add(this.btnUser);
             this.Name = "RoleSelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form2";
+            this.Text = "Role Selection";
             this.ResumeLayout(false);
             this.PerformLayout();
 

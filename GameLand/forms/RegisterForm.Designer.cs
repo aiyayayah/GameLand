@@ -40,6 +40,10 @@
             this.labelConfirm = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.title = new System.Windows.Forms.Label();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelName
@@ -92,7 +96,7 @@
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.OldLace;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(736, 405);
+            this.textBoxPassword.Location = new System.Drawing.Point(727, 539);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(284, 35);
             this.textBoxPassword.TabIndex = 5;
@@ -104,7 +108,7 @@
             this.labelPass.BackColor = System.Drawing.Color.Transparent;
             this.labelPass.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPass.ForeColor = System.Drawing.Color.OldLace;
-            this.labelPass.Location = new System.Drawing.Point(548, 405);
+            this.labelPass.Location = new System.Drawing.Point(539, 539);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(160, 37);
             this.labelPass.TabIndex = 4;
@@ -115,7 +119,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.MistyRose;
             this.btnRegister.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnRegister.Location = new System.Drawing.Point(687, 639);
+            this.btnRegister.Location = new System.Drawing.Point(678, 773);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(167, 51);
             this.btnRegister.TabIndex = 6;
@@ -127,7 +131,7 @@
             // 
             this.textBoxConfirm.BackColor = System.Drawing.Color.OldLace;
             this.textBoxConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxConfirm.Location = new System.Drawing.Point(736, 481);
+            this.textBoxConfirm.Location = new System.Drawing.Point(727, 615);
             this.textBoxConfirm.Name = "textBoxConfirm";
             this.textBoxConfirm.Size = new System.Drawing.Size(284, 35);
             this.textBoxConfirm.TabIndex = 9;
@@ -139,7 +143,7 @@
             this.labelConfirm.BackColor = System.Drawing.Color.Transparent;
             this.labelConfirm.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirm.ForeColor = System.Drawing.Color.OldLace;
-            this.labelConfirm.Location = new System.Drawing.Point(428, 481);
+            this.labelConfirm.Location = new System.Drawing.Point(419, 615);
             this.labelConfirm.Name = "labelConfirm";
             this.labelConfirm.Size = new System.Drawing.Size(285, 37);
             this.labelConfirm.TabIndex = 8;
@@ -152,7 +156,7 @@
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabel1.Location = new System.Drawing.Point(550, 574);
+            this.linkLabel1.Location = new System.Drawing.Point(541, 708);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(401, 29);
             this.linkLabel1.TabIndex = 10;
@@ -173,14 +177,61 @@
             this.title.Text = "New Here? Register for GameLand";
             this.title.Click += new System.EventHandler(this.title_Click);
             // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.BackColor = System.Drawing.Color.OldLace;
+            this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPhone.Location = new System.Drawing.Point(765, 486);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(284, 35);
+            this.textBoxPhone.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OldLace;
+            this.label1.Location = new System.Drawing.Point(537, 482);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 44);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Phone Number";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.AccessibleDescription = "";
+            this.textBoxEmail.BackColor = System.Drawing.Color.OldLace;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(736, 405);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(284, 35);
+            this.textBoxEmail.TabIndex = 13;
+            this.textBoxEmail.Tag = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.OldLace;
+            this.label2.Location = new System.Drawing.Point(591, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 44);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Email";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1495, 852);
+            this.ClientSize = new System.Drawing.Size(1498, 861);
+            this.Controls.Add(this.textBoxPhone);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.title);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.textBoxConfirm);
@@ -193,7 +244,8 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
             this.Name = "RegisterForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "User Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +264,9 @@
         private System.Windows.Forms.Label labelConfirm;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label label2;
     }
 }

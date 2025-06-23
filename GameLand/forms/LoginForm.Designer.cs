@@ -39,7 +39,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(746, 521);
+            this.btnLogin.Location = new System.Drawing.Point(720, 523);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 39);
             this.btnLogin.TabIndex = 18;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.textBoxIC);
             this.Controls.Add(this.labelIC);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "User Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -75,6 +75,12 @@
     <Compile Include="forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ManageUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ManageUsersForm.Designer.cs">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ManageUsersForm.resx">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\UserDashboardForm.resx">
       <DependentUpon>UserDashboardForm.cs</DependentUpon>

@@ -11,7 +11,8 @@ namespace GameLandWebService
     {
 
         [WebMethod]
-        public string RegisterUser(string name, string ic, string password)
+        public string RegisterUser(string name, string ic, string password, string email, string phone)
+
         {
             string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
 
@@ -30,12 +31,15 @@ namespace GameLandWebService
                     return "IC already exists.";
                 }
 
-                string insertQuery = "INSERT INTO Users (Name, ICNumber, Password) VALUES (@Name, @IC, @Password)";
+                string insertQuery = "INSERT INTO Users (Name, ICNumber, Password, Email, Phone) VALUES (@Name, @IC, @Password, @Email, @Phone)";
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@IC", ic);
                 cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Phone", phone);
                 cmd.ExecuteNonQuery();
+
 
                 return "Registration successful.";
             }

@@ -24,8 +24,12 @@ namespace GameLand
             string ic = textBoxIC.Text;
             string password = textBoxPassword.Text;
             string confirm = textBoxConfirm.Text;
+            string email = textBoxEmail.Text;
+            string phone = textBoxPhone.Text;
 
-            if (name == "" || ic == "" || password == "" || confirm == "")
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(ic) ||
+                string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirm) ||
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(phone))
             {
                 MessageBox.Show("Please fill all fields.");
                 return;
@@ -40,15 +44,13 @@ namespace GameLand
             try
             {
                 GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
-                string result = client.RegisterUser(name, ic, password);
+                string result = client.RegisterUser(name, ic, password, email, phone);
 
-                if (result.Contains("Registration successful")) // Make sure this matches your service's return message
+                if (result.Contains("Registration successful"))
                 {
-
-                    // Redirect to login form
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
-                    this.Hide(); // Hide registration form
+                    this.Hide();
                 }
                 else
                 {
@@ -59,6 +61,7 @@ namespace GameLand
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
         }
 
 

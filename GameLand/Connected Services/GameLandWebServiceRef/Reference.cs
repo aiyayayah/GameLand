@@ -17,10 +17,10 @@ namespace GameLand.GameLandWebServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/RegisterUser", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string RegisterUser(string name, string ic, string password);
+        string RegisterUser(string name, string ic, string password, string email, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/RegisterUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password);
+        System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password, string email, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/LoginUser", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -92,12 +92,12 @@ namespace GameLand.GameLandWebServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public string RegisterUser(string name, string ic, string password) {
-            return base.Channel.RegisterUser(name, ic, password);
+        public string RegisterUser(string name, string ic, string password, string email, string phone) {
+            return base.Channel.RegisterUser(name, ic, password, email, phone);
         }
         
-        public System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password) {
-            return base.Channel.RegisterUserAsync(name, ic, password);
+        public System.Threading.Tasks.Task<string> RegisterUserAsync(string name, string ic, string password, string email, string phone) {
+            return base.Channel.RegisterUserAsync(name, ic, password, email, phone);
         }
         
         public string LoginUser(string ic, string password) {
