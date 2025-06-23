@@ -16,7 +16,32 @@ namespace GameLand
 
 
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             string ic = textBoxIC.Text.Trim();
             string password = textBoxPassword.Text.Trim();
@@ -43,12 +68,6 @@ namespace GameLand
             {
                 MessageBox.Show("Login failed due to a service error:\n" + ex.Message);
             }
-        }
-
-
-        private void title_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -40,10 +40,10 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(758, 47);
+            this.lblWelcome.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(745, 60);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(103, 37);
+            this.lblWelcome.Size = new System.Drawing.Size(109, 37);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "label1";
             this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
@@ -52,7 +52,7 @@
             // 
             this.dgvAvailableItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAvailableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAvailableItems.Location = new System.Drawing.Point(47, 121);
+            this.dgvAvailableItems.Location = new System.Drawing.Point(47, 137);
             this.dgvAvailableItems.Name = "dgvAvailableItems";
             this.dgvAvailableItems.RowHeadersWidth = 62;
             this.dgvAvailableItems.RowTemplate.Height = 28;
@@ -62,7 +62,8 @@
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(868, 621);
+            this.btnBorrow.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrow.Location = new System.Drawing.Point(868, 647);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(133, 51);
             this.btnBorrow.TabIndex = 2;
@@ -72,6 +73,7 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.Location = new System.Drawing.Point(868, 903);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(133, 51);
@@ -84,7 +86,7 @@
             // 
             this.dgvBorrowedItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBorrowedItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBorrowedItems.Location = new System.Drawing.Point(47, 727);
+            this.dgvBorrowedItems.Location = new System.Drawing.Point(47, 732);
             this.dgvBorrowedItems.Name = "dgvBorrowedItems";
             this.dgvBorrowedItems.RowHeadersWidth = 62;
             this.dgvBorrowedItems.RowTemplate.Height = 28;

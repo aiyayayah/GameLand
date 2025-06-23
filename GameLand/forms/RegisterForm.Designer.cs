@@ -52,7 +52,7 @@
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.OldLace;
-            this.labelName.Location = new System.Drawing.Point(591, 255);
+            this.labelName.Location = new System.Drawing.Point(533, 227);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(101, 37);
             this.labelName.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.textBoxName.AccessibleDescription = "";
             this.textBoxName.BackColor = System.Drawing.Color.OldLace;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(736, 259);
+            this.textBoxName.Location = new System.Drawing.Point(678, 231);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(284, 35);
             this.textBoxName.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             this.textBoxIC.BackColor = System.Drawing.Color.OldLace;
             this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIC.Location = new System.Drawing.Point(736, 336);
+            this.textBoxIC.Location = new System.Drawing.Point(678, 304);
             this.textBoxIC.Name = "textBoxIC";
             this.textBoxIC.Size = new System.Drawing.Size(284, 35);
             this.textBoxIC.TabIndex = 3;
@@ -86,7 +86,7 @@
             this.labelIC.BackColor = System.Drawing.Color.Transparent;
             this.labelIC.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIC.ForeColor = System.Drawing.Color.OldLace;
-            this.labelIC.Location = new System.Drawing.Point(537, 336);
+            this.labelIC.Location = new System.Drawing.Point(479, 304);
             this.labelIC.Name = "labelIC";
             this.labelIC.Size = new System.Drawing.Size(170, 37);
             this.labelIC.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.OldLace;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(727, 539);
+            this.textBoxPassword.Location = new System.Drawing.Point(678, 524);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(284, 35);
             this.textBoxPassword.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.labelPass.BackColor = System.Drawing.Color.Transparent;
             this.labelPass.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPass.ForeColor = System.Drawing.Color.OldLace;
-            this.labelPass.Location = new System.Drawing.Point(539, 539);
+            this.labelPass.Location = new System.Drawing.Point(500, 520);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(160, 37);
             this.labelPass.TabIndex = 4;
@@ -116,10 +116,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.MistyRose;
+            this.btnRegister.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnRegister.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnRegister.Location = new System.Drawing.Point(678, 773);
+            this.btnRegister.ForeColor = System.Drawing.Color.DimGray;
+            this.btnRegister.Location = new System.Drawing.Point(689, 758);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(167, 51);
             this.btnRegister.TabIndex = 6;
@@ -131,7 +131,7 @@
             // 
             this.textBoxConfirm.BackColor = System.Drawing.Color.OldLace;
             this.textBoxConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxConfirm.Location = new System.Drawing.Point(727, 615);
+            this.textBoxConfirm.Location = new System.Drawing.Point(678, 600);
             this.textBoxConfirm.Name = "textBoxConfirm";
             this.textBoxConfirm.Size = new System.Drawing.Size(284, 35);
             this.textBoxConfirm.TabIndex = 9;
@@ -143,7 +143,7 @@
             this.labelConfirm.BackColor = System.Drawing.Color.Transparent;
             this.labelConfirm.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirm.ForeColor = System.Drawing.Color.OldLace;
-            this.labelConfirm.Location = new System.Drawing.Point(419, 615);
+            this.labelConfirm.Location = new System.Drawing.Point(375, 600);
             this.labelConfirm.Name = "labelConfirm";
             this.labelConfirm.Size = new System.Drawing.Size(285, 37);
             this.labelConfirm.TabIndex = 8;
@@ -156,7 +156,7 @@
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.linkLabel1.Location = new System.Drawing.Point(541, 708);
+            this.linkLabel1.Location = new System.Drawing.Point(561, 696);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(401, 29);
             this.linkLabel1.TabIndex = 10;
@@ -170,7 +170,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cambria", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.Control;
-            this.title.Location = new System.Drawing.Point(296, 141);
+            this.title.Location = new System.Drawing.Point(296, 119);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(902, 65);
             this.title.TabIndex = 11;
@@ -181,7 +181,7 @@
             // 
             this.textBoxPhone.BackColor = System.Drawing.Color.OldLace;
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(765, 486);
+            this.textBoxPhone.Location = new System.Drawing.Point(678, 451);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(284, 35);
             this.textBoxPhone.TabIndex = 15;
@@ -192,9 +192,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(537, 482);
+            this.label1.Location = new System.Drawing.Point(435, 447);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 44);
+            this.label1.Size = new System.Drawing.Size(237, 37);
             this.label1.TabIndex = 14;
             this.label1.Text = "Phone Number";
             // 
@@ -203,7 +203,7 @@
             this.textBoxEmail.AccessibleDescription = "";
             this.textBoxEmail.BackColor = System.Drawing.Color.OldLace;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(736, 405);
+            this.textBoxEmail.Location = new System.Drawing.Point(678, 381);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(284, 35);
             this.textBoxEmail.TabIndex = 13;
@@ -215,9 +215,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.OldLace;
-            this.label2.Location = new System.Drawing.Point(591, 401);
+            this.label2.Location = new System.Drawing.Point(533, 377);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 44);
+            this.label2.Size = new System.Drawing.Size(100, 37);
             this.label2.TabIndex = 12;
             this.label2.Text = "Email";
             // 
@@ -227,6 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1498, 861);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.label1);

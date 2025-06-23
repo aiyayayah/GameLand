@@ -45,7 +45,7 @@
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 62;
             this.dataGridViewUsers.RowTemplate.Height = 28;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1617, 406);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1617, 492);
             this.dataGridViewUsers.TabIndex = 0;
             this.dataGridViewUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellClick);
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
@@ -53,27 +53,29 @@
             // dgvUserTransactions
             // 
             this.dgvUserTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserTransactions.Location = new System.Drawing.Point(65, 535);
+            this.dgvUserTransactions.Location = new System.Drawing.Point(49, 577);
             this.dgvUserTransactions.Name = "dgvUserTransactions";
             this.dgvUserTransactions.RowHeadersWidth = 62;
             this.dgvUserTransactions.RowTemplate.Height = 28;
-            this.dgvUserTransactions.Size = new System.Drawing.Size(1577, 110);
+            this.dgvUserTransactions.Size = new System.Drawing.Size(1617, 199);
             this.dgvUserTransactions.TabIndex = 1;
             this.dgvUserTransactions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserTransactions_CellContentClick);
             // 
             // btnUpdateReturn
             // 
-            this.btnUpdateReturn.Location = new System.Drawing.Point(548, 701);
+            this.btnUpdateReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateReturn.Location = new System.Drawing.Point(476, 803);
             this.btnUpdateReturn.Name = "btnUpdateReturn";
             this.btnUpdateReturn.Size = new System.Drawing.Size(208, 59);
             this.btnUpdateReturn.TabIndex = 2;
-            this.btnUpdateReturn.Text = "Make Payment";
+            this.btnUpdateReturn.Text = "Return";
             this.btnUpdateReturn.UseVisualStyleBackColor = true;
             this.btnUpdateReturn.Click += new System.EventHandler(this.btnUpdateReturn_Click_1);
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(810, 701);
+            this.btnDeleteUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.Location = new System.Drawing.Point(738, 803);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(208, 59);
             this.btnDeleteUser.TabIndex = 3;
@@ -83,7 +85,8 @@
             // 
             // btnEditUser
             // 
-            this.btnEditUser.Location = new System.Drawing.Point(1078, 710);
+            this.btnEditUser.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditUser.Location = new System.Drawing.Point(997, 803);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(208, 59);
             this.btnEditUser.TabIndex = 4;

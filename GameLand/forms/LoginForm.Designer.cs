@@ -29,31 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPass = new System.Windows.Forms.Label();
-            this.textBoxIC = new System.Windows.Forms.TextBox();
             this.labelIC = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxIC = new System.Windows.Forms.TextBox();
+            this.labelICNUm = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(720, 523);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(122, 39);
-            this.btnLogin.TabIndex = 18;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(691, 444);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(284, 26);
-            this.textBoxPassword.TabIndex = 16;
-            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // labelPass
             // 
@@ -64,16 +48,8 @@
             this.labelPass.ForeColor = System.Drawing.Color.OldLace;
             this.labelPass.Location = new System.Drawing.Point(478, 444);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(160, 37);
+            this.labelPass.Size = new System.Drawing.Size(0, 37);
             this.labelPass.TabIndex = 15;
-            this.labelPass.Text = "Password";
-            // 
-            // textBoxIC
-            // 
-            this.textBoxIC.Location = new System.Drawing.Point(691, 375);
-            this.textBoxIC.Name = "textBoxIC";
-            this.textBoxIC.Size = new System.Drawing.Size(284, 26);
-            this.textBoxIC.TabIndex = 14;
             // 
             // labelIC
             // 
@@ -84,9 +60,8 @@
             this.labelIC.ForeColor = System.Drawing.Color.OldLace;
             this.labelIC.Location = new System.Drawing.Point(478, 375);
             this.labelIC.Name = "labelIC";
-            this.labelIC.Size = new System.Drawing.Size(170, 37);
+            this.labelIC.Size = new System.Drawing.Size(0, 37);
             this.labelIC.TabIndex = 13;
-            this.labelIC.Text = "Ic Number";
             // 
             // title
             // 
@@ -101,6 +76,68 @@
             this.title.Text = "Welcome Back to GameLand";
             this.title.Click += new System.EventHandler(this.title_Click);
             // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.BackColor = System.Drawing.Color.OldLace;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(694, 438);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(284, 35);
+            this.textBoxPassword.TabIndex = 23;
+            this.textBoxPassword.Visible = false;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OldLace;
+            this.label1.Location = new System.Drawing.Point(495, 438);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 37);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Password";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // textBoxIC
+            // 
+            this.textBoxIC.AccessibleDescription = "";
+            this.textBoxIC.BackColor = System.Drawing.Color.OldLace;
+            this.textBoxIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIC.Location = new System.Drawing.Point(694, 365);
+            this.textBoxIC.Name = "textBoxIC";
+            this.textBoxIC.Size = new System.Drawing.Size(284, 35);
+            this.textBoxIC.TabIndex = 21;
+            this.textBoxIC.Tag = "";
+            this.textBoxIC.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
+            // 
+            // labelICNUm
+            // 
+            this.labelICNUm.AutoSize = true;
+            this.labelICNUm.BackColor = System.Drawing.Color.Transparent;
+            this.labelICNUm.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelICNUm.ForeColor = System.Drawing.Color.OldLace;
+            this.labelICNUm.Location = new System.Drawing.Point(549, 361);
+            this.labelICNUm.Name = "labelICNUm";
+            this.labelICNUm.Size = new System.Drawing.Size(101, 37);
+            this.labelICNUm.TabIndex = 20;
+            this.labelICNUm.Text = "Name";
+            this.labelICNUm.Click += new System.EventHandler(this.labelName_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogin.Font = new System.Drawing.Font("Cambria", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.DimGray;
+            this.btnLogin.Location = new System.Drawing.Point(694, 542);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(167, 51);
+            this.btnLogin.TabIndex = 24;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -108,11 +145,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1495, 852);
-            this.Controls.Add(this.title);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.labelPass);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxIC);
+            this.Controls.Add(this.labelICNUm);
+            this.Controls.Add(this.title);
+            this.Controls.Add(this.labelPass);
             this.Controls.Add(this.labelIC);
             this.Name = "LoginForm";
             this.Text = "User Login";
@@ -122,12 +161,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPass;
-        private System.Windows.Forms.TextBox textBoxIC;
         private System.Windows.Forms.Label labelIC;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxIC;
+        private System.Windows.Forms.Label labelICNUm;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
