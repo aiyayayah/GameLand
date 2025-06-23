@@ -226,48 +226,36 @@ namespace GameLand.forms
             string ic = dataGridViewUsers.SelectedRows[0].Cells["ICNumber"].Value.ToString();
             string name = dataGridViewUsers.SelectedRows[0].Cells["Name"].Value.ToString();
 
-            // Confirmation prompt
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete user '{name}'?",
-                                                  "Confirm Deletion",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show(
+                $"Are you sure you want to delete user '{name}'?",
+                "Confirm Deletion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
             if (result != DialogResult.Yes)
                 return;
 
             try
             {
-                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connStr))
+                var client = new GameServiceSoapClient("GameServiceSoap");
+                string response = client.DeleteUser(ic);
+
+                if (response == "Success")
                 {
-                    conn.Open();
-
-                    // Check for active borrowings
-                    string checkQuery = "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL";
-                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                    checkCmd.Parameters.AddWithValue("@ic", ic);
-                    int active = (int)checkCmd.ExecuteScalar();
-
-                    if (active > 0)
-                    {
-                        MessageBox.Show("This user has active borrowings and cannot be deleted!");
-                        return;
-                    }
-
-                    string deleteQuery = "DELETE FROM Users WHERE ICNumber = @ic";
-                    SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn);
-                    deleteCmd.Parameters.AddWithValue("@ic", ic);
-                    deleteCmd.ExecuteNonQuery();
+                    MessageBox.Show("User deleted successfully.");
+                    AdminUserListForm_Load_1(null, null); // Refresh
                 }
-
-                MessageBox.Show("User deleted successfully.");
-                AdminUserListForm_Load_1(null, null); // Refresh user list
+                else
+                {
+                    MessageBox.Show(response);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error deleting user: " + ex.Message);
+                MessageBox.Show("Web service error: " + ex.Message);
             }
         }
+
 
 
         private void btnEditUser_Click_1(object sender, EventArgs e)

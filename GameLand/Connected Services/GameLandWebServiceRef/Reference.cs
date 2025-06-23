@@ -63,6 +63,20 @@ namespace GameLand.GameLandWebServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/CheckConnectionString", ReplyAction="*")]
         System.Threading.Tasks.Task<string> CheckConnectionStringAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/UpdateUserInfo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool UpdateUserInfo(string icNumber, string name, string email, string phone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/UpdateUserInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> UpdateUserInfoAsync(string icNumber, string name, string email, string phone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/DeleteUser", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string DeleteUser(string ic);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://gameland.com/DeleteUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> DeleteUserAsync(string ic);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -146,6 +160,22 @@ namespace GameLand.GameLandWebServiceRef {
         
         public System.Threading.Tasks.Task<string> CheckConnectionStringAsync() {
             return base.Channel.CheckConnectionStringAsync();
+        }
+        
+        public bool UpdateUserInfo(string icNumber, string name, string email, string phone) {
+            return base.Channel.UpdateUserInfo(icNumber, name, email, phone);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserInfoAsync(string icNumber, string name, string email, string phone) {
+            return base.Channel.UpdateUserInfoAsync(icNumber, name, email, phone);
+        }
+        
+        public string DeleteUser(string ic) {
+            return base.Channel.DeleteUser(ic);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteUserAsync(string ic) {
+            return base.Channel.DeleteUserAsync(ic);
         }
     }
 }

@@ -170,5 +170,75 @@ namespace GameLandWebService
             return conn != null ? "Connection string found " : "myConn not found in Web.config";
         }
 
+        [WebMethod]
+        public bool UpdateUserInfo(string icNumber, string name, string email, string phone)
+        {
+            try
+            {
+                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    string updateQuery = @"
+                UPDATE Users
+                SET Name = @Name, Email = @Email, Phone = @Phone
+                WHERE ICNumber = @IC";
+
+                    SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Phone", phone);
+                    cmd.Parameters.AddWithValue("@IC", icNumber);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public string DeleteUser(string ic)
+        {
+            try
+            {
+                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    // Check for active borrowings
+                    string checkQuery = "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@ic", ic);
+                    int active = (int)checkCmd.ExecuteScalar();
+
+                    if (active > 0)
+                    {
+                        return "This user has active borrowings and cannot be deleted.";
+                    }
+
+                    // Delete user
+                    string deleteQuery = "DELETE FROM Users WHERE ICNumber = @ic";
+                    SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn);
+                    deleteCmd.Parameters.AddWithValue("@ic", ic);
+                    int rows = deleteCmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                        return "Success";
+                    else
+                        return "No user found to delete.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Error: " + ex.Message;
+            }
+        }
+
+
     }
 }
