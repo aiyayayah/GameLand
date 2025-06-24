@@ -118,6 +118,18 @@ namespace GameLandWebService
             {
                 conn.Open();
 
+                // Step 1: Check how many items the user has currently borrowed and not returned
+                SqlCommand countCmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM BorrowRecords WHERE UserIC = @ic AND ReturnDate IS NULL", conn);
+                countCmd.Parameters.AddWithValue("@ic", userIC);
+
+                int borrowedCount = (int)countCmd.ExecuteScalar();
+                if (borrowedCount >= 3)
+                {
+                    return "Borrowing limit reached. You can only borrow up to 3 items.";
+                }
+
+                // Step 2: Check if the item is available
                 SqlCommand checkCmd = new SqlCommand("SELECT ItemStatus FROM GameCards WHERE ItemID = @itemId", conn);
                 checkCmd.Parameters.AddWithValue("@itemId", itemId);
                 string status = (string)checkCmd.ExecuteScalar();
@@ -127,12 +139,14 @@ namespace GameLandWebService
                     return "Item is not available.";
                 }
 
+                // Step 3: Insert borrow record
                 SqlCommand borrowCmd = new SqlCommand(
                     "INSERT INTO BorrowRecords (UserIC, ItemID, BorrowDate) VALUES (@ic, @itemId, GETDATE())", conn);
                 borrowCmd.Parameters.AddWithValue("@ic", userIC);
                 borrowCmd.Parameters.AddWithValue("@itemId", itemId);
                 borrowCmd.ExecuteNonQuery();
 
+                // Step 4: Update game card status
                 SqlCommand updateCmd = new SqlCommand(
                     "UPDATE GameCards SET ItemStatus = 'Not Available', UserIC = @ic WHERE ItemID = @itemId", conn);
                 updateCmd.Parameters.AddWithValue("@ic", userIC);
@@ -142,6 +156,7 @@ namespace GameLandWebService
                 return "Success";
             }
         }
+
 
         [WebMethod]
         public string ReturnItem(int recordId, string itemId)
