@@ -44,11 +44,21 @@ namespace GameLandWebService
                 return "Registration successful.";
             }
         }
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
 
 
         [WebMethod]
         public string LoginUser(string ic, string password)
         {
+            string hashedPassword = HashPassword(password); // 🔒 ADD THIS
             string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
@@ -56,19 +66,13 @@ namespace GameLandWebService
                 string query = "SELECT Name FROM Users WHERE ICNumber = @IC AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IC", ic);
-                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Password", hashedPassword); // 🔁 Use hashedPassword here
 
                 object result = cmd.ExecuteScalar();
-                if (result != null)
-                {
-                    return result.ToString(); // Return user name
-                }
-                else
-                {
-                    return null; // Login failed
-                }
+                return result != null ? result.ToString() : null;
             }
         }
+
 
         [WebMethod]
         public string AdminLogin(string staffID, string password)

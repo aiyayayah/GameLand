@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using GameLand.Services;
+using GameLand.forms;
 
 namespace GameLand
 {
@@ -17,6 +18,15 @@ namespace GameLand
             InitializeComponent();
         }
 
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
 
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
@@ -44,7 +54,9 @@ namespace GameLand
             try
             {
                 GameLandWebServiceRef.GameServiceSoapClient client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
-                string result = client.RegisterUser(name, ic, password, email, phone);
+                string hashedPassword = HashPassword(password);
+                string result = client.RegisterUser(name, ic, hashedPassword, email, phone);
+
 
                 if (result.Contains("Registration successful"))
                 {
@@ -66,28 +78,34 @@ namespace GameLand
 
         }
 
-
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connStr))
-            {
-                conn.Open();
-                string query = "SELECT * FROM Users WHERE ICNumber = @ICNumber AND Password = @Password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ICNumber", textBoxIC.Text);
-                cmd.Parameters.AddWithValue("@Password", textBoxPassword.Text);
+            string ic = textBoxIC.Text;
+            string password = textBoxPassword.Text;
 
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
+            try
+            {
+                var client = new GameLandWebServiceRef.GameServiceSoapClient("GameServiceSoap");
+                string hashedPassword = HashPassword(password); // hash before sending
+                string result = client.LoginUser(ic, hashedPassword);
+
+                if (!string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show("Login successful!");
-                   
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserDashboardForm dashboard = new UserDashboardForm(result, ic);
+                    dashboard.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid credentials.");
+                    MessageBox.Show("Invalid IC or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login error: " + ex.Message);
+            }
+
         }
 
         private void txtIC_TextChanged(object sender, EventArgs e)
