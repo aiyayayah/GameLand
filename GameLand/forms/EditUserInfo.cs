@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GameLand.GameLandWebServiceRef;
+using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GameLand.forms
 {
-    public partial class EditUserInfo: Form
+    public partial class EditUserInfo : Form
     {
+        private readonly string originalIC;
+
         public EditUserInfo(string name, string ic, string email, string phone)
         {
             InitializeComponent();
-
             originalIC = ic;
 
             textBoxName.Text = name;
@@ -28,55 +22,42 @@ namespace GameLand.forms
             textBoxIC.ReadOnly = true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void EditUserInfo_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             string name = textBoxName.Text.Trim();
             string email = textBoxEmail.Text.Trim();
             string phone = textBoxPhone.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(phone))
-            {
-                MessageBox.Show("Please fill in all fields.");
-                return;
-            }
-
             try
             {
-                string connStr = ConfigurationManager.ConnectionStrings["myConn"].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connStr))
+                var client = new GameServiceSoapClient("GameServiceSoap");
+
+                bool success = client.UpdateUserInfo(originalIC, name, email, phone);
+
+                if (success)
                 {
-                    conn.Open();
-                    string updateQuery = @"
-                    UPDATE Users
-                    SET Name = @Name, Email = @Email, Phone = @Phone
-                    WHERE ICNumber = @IC";
-
-                    SqlCommand cmd = new SqlCommand(updateQuery, conn);
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Phone", phone);
-                    cmd.Parameters.AddWithValue("@IC", originalIC);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("User info updated successfully.");
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Update failed.");
-                    }
+                    MessageBox.Show("User info updated successfully.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Update failed. No changes were made.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error updating user: " + ex.Message);
             }
         }
-    }
 
-}
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

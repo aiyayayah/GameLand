@@ -69,13 +69,11 @@
     <Compile Include="forms\AdminUserListForm.Designer.cs">
       <DependentUpon>AdminUserListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="C:\Users\cky\Downloads\Temp\EditUserInfo.cs">
+    <Compile Include="forms\EditUserInfo.cs">
       <SubType>Form</SubType>
-      <Link>forms\EditUserInfo.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\cky\Downloads\Temp\EditUserInfo.Designer.cs">
+    <Compile Include="forms\EditUserInfo.Designer.cs">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
-      <Link>forms\EditUserInfo.Designer.cs</Link>
     </Compile>
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -110,9 +108,8 @@
     <EmbeddedResource Include="forms\AdminUserListForm.resx">
       <DependentUpon>AdminUserListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C:\Users\cky\Downloads\Temp\EditUserInfo.resx">
+    <EmbeddedResource Include="forms\EditUserInfo.resx">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
-      <Link>forms\EditUserInfo.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
